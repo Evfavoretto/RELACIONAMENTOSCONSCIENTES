@@ -939,13 +939,15 @@
               </div>
             </div>
 
-            <div class="block" style="text-align:center;">
-              <img
-                src="mentor.jpeg"
-                alt="Foto do mentor Evandro Favoretto"
-                loading="lazy"
-                style="border-radius:18px; border:1px solid rgba(11,16,32,0.10); box-shadow: var(--shadow2); object-fit:cover; width:100%; max-height:420px;"
-              />
+            <div class="block photo-wrap" style="text-align:center;">
+  <img
+    src="mentor.jpeg"
+    alt="Foto do mentor Evandro Favoretto"
+    loading="lazy"
+    style="border-radius:18px; border:1px solid rgba(11,16,32,0.10); box-shadow: var(--shadow2);"
+  />
+</div>
+
             </div>
           </div>
 
