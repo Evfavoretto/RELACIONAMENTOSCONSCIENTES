@@ -691,20 +691,20 @@
 
           <div class="info">
             <div class="big">⏳ Duração</div>
-            <div class="small"><b style="color: rgba(124,58,237,0.95);">3 a 4h por noite</b></div>
+            <div class="small"><b style="color: rgba(124,58,237,0.95);"> 2h por noite</b></div>
           </div>
 
           <div class="info">
             <div class="big">📍 Formato</div>
-            <div class="small"><b style="color: rgba(124,58,237,0.95);">Online</b> (ou troque para Presencial)</div>
+            <div class="small"><b style="color: rgba(124,58,237,0.95);">Online</b> </div>
           </div>
 
           <div class="badge" aria-label="Vagas e investimento (placeholder)">
             <div>
               <strong>Vagas limitadas</strong><br />
-              <span>Investimento: <b style="color: rgba(124,58,237,0.95);">[R$ ___]</b></span>
+              <span>Investimento:De R$260,00 por R$44,00   <b style="color: rgba(124,58,237,0.95);">[R$ ___]</b></span>
             </div>
-            <span>⭐</span>
+           <span>⭐</span>
           </div>
 
           <p style="margin:6px 0 0; color:var(--muted); line-height:1.75;">
@@ -896,10 +896,11 @@
 
             <div class="block" style="text-align:center;">
               <img
-                src="https://via.placeholder.com/520x380.png?text=Foto+do+Mentor"
-                alt="Foto do mentor Evandro Favoretto"
-                style="border-radius:18px; border:1px solid rgba(11,16,32,0.10); box-shadow: var(--shadow2);"
-              />
+  src="mentor.jpeg"
+  alt="Foto do mentor Evandro Favoretto"
+  loading="lazy"
+  style="border-radius:18px; border:1px solid rgba(11,16,32,0.10); box-shadow: var(--shadow2); object-fit:cover; width:100%; height:auto;"
+/>
               <p class="section-sub" style="margin:12px 0 0;">
                 *Troque a imagem acima pela sua foto (recomendado: 1200×900 ou similar).*
               </p>
