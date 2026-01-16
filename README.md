@@ -3,27 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="light only" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="color-scheme" content="light only">
+  <meta name="theme-color" content="#ffffff">
 
   <title>Relacionamentos Conscientes | Workshop (19 e 20/02/2026 às 20h)</title>
   <meta name="description" content="Workshop de duas noites: Relacionamentos Conscientes — Do vínculo inconsciente ao encontro real. 19 e 20 de fevereiro de 2026 às 20h." />
 
-  <!-- Canonical (troque quando publicar em domínio final) -->
-  <link rel="canonical" href="https://seu-dominio.com/relacionamentos-conscientes" />
-
   <!-- Open Graph -->
   <meta property="og:title" content="Relacionamentos Conscientes | Workshop" />
-  <meta property="og:description" content="Do vínculo inconsciente ao encontro real. Relacionamento não é sobre encontrar alguém. É sobre o lugar interno a partir do qual eu me relaciono." />
+  <meta property="og:description" content="Do vínculo inconsciente ao encontro real." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Relacionamentos+Conscientes" />
-  <meta property="og:url" content="https://seu-dominio.com/relacionamentos-conscientes" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Relacionamentos Conscientes | Workshop" />
-  <meta name="twitter:description" content="Do vínculo inconsciente ao encontro real. 19 e 20/02/2026 às 20h." />
+  <meta name="twitter:description" content="19 e 20/02/2026 às 20h." />
   <meta name="twitter:image" content="https://via.placeholder.com/1200x630.png?text=Relacionamentos+Conscientes" />
 
   <link rel="icon" href="https://via.placeholder.com/64.png" />
@@ -46,26 +42,20 @@
 
       --accent:#7c3aed;
       --accent2:#ec4899;
-
       --stroke:rgba(11,16,32,0.12);
-      --card:rgba(255,255,255,0.78);
-      --card2:rgba(255,255,255,0.92);
 
-      --shadow:0 18px 48px rgba(11,16,32,.14);
-      --shadow2:0 10px 26px rgba(11,16,32,.10);
+      --card:rgba(255,255,255,0.78);
+      --card2:rgba(255,255,255,0.90);
+
+      --shadow:0 20px 55px rgba(11,16,32,.14);
+      --shadow2:0 12px 30px rgba(11,16,32,.10);
 
       --radius:22px;
       --max:1140px;
 
       --focus:0 0 0 4px rgba(124,58,237,0.25);
 
-      /* topbar */
-      --topbar-h: 72px;
-
-      /* tipografia base */
-      --fs-14: 14px;
-      --fs-15: 15px;
-      --fs-16: 16px;
+      --topbar-h: 70px;
     }
 
     *{ box-sizing:border-box; }
@@ -80,10 +70,7 @@
         radial-gradient(1000px 640px at 50% 0%, rgba(255,227,241,0.86), transparent 66%),
         linear-gradient(180deg, #f7fbff 0%, #faf7ff 60%, #fff7fb 100%);
       overflow-x:hidden;
-
       padding-top: calc(var(--topbar-h) + env(safe-area-inset-top, 0px));
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
     }
 
     a{ color:inherit; text-decoration:none; }
@@ -105,12 +92,18 @@
     }
     :focus-visible{ outline:none; box-shadow: var(--focus); border-radius:14px; }
 
-    /* ======== ANTI-TEMA GITHUB PAGES (forte) ======== */
+    /* =========================================================
+       FORÇA REMOVER HEADER/TÍTULO DO GITHUB PAGES (MATA-TEMA)
+       ========================================================= */
     :where(body) > :is(
-      header, .page-header, header.page-header, .site-header, header.site-header,
-      .project-name, .project-tagline, #project_title, #project_tagline,
-      #header, #header_wrap, #header-wrap, #title, #subtitle, #forkme_banner,
-      .ribbon, .github-corner, .gh-header, .gh-head, .Header
+      .page-header, header.page-header,
+      .site-header, header.site-header,
+      .Header, .gh-header, .gh-head,
+      #header, #header_wrap, #header-wrap,
+      #project_title, #project_tagline,
+      .project-name, .project-tagline,
+      #title, #subtitle,
+      #forkme_banner, .ribbon, .github-corner
     ){
       display:none !important;
       height:0 !important;
@@ -120,8 +113,9 @@
       overflow:hidden !important;
     }
     :where(.markdown-body) > :is(h1,h2,h3):first-child{ display:none !important; }
+    .container .page-header, .inner .page-header{ display:none !important; }
 
-    /* TOPBAR */
+    /* TOPBAR fixa */
     .topbar{
       position:fixed;
       left:0; right:0; top:0;
@@ -129,7 +123,6 @@
       z-index:80;
       background: rgba(255,255,255,.78);
       backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
       border-bottom:1px solid var(--stroke);
       display:flex;
       align-items:center;
@@ -159,17 +152,18 @@
       font-size:12px;
       color:var(--muted2);
       margin-top:2px;
-      font-weight:800;
+      font-weight:700;
     }
 
     nav{
-      display:flex; gap:10px; align-items:center;
-      justify-content:center; flex:1;
+      display:flex; gap:14px; align-items:center;
+      justify-content:center;
+      flex:1;
     }
     nav a{
       padding:9px 10px;
       border-radius:999px;
-      font-weight:850;
+      font-weight:800;
       color:var(--muted);
       border:1px solid transparent;
       transition: background .15s ease, border-color .15s ease, transform .15s ease;
@@ -182,14 +176,12 @@
       color: var(--text);
     }
 
-    /* Botões (mais profissionais e consistentes) */
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding:12px 16px;
-      min-height: 44px; /* touch */
       border-radius:999px;
       border:1px solid var(--stroke);
-      background: rgba(255,255,255,0.92);
+      background: rgba(255,255,255,0.90);
       color: var(--text);
       font-weight:900;
       letter-spacing:.2px;
@@ -199,22 +191,17 @@
     .btn:hover{
       transform: translateY(-1px);
       border-color: rgba(124,58,237,0.25);
-      box-shadow: 0 18px 44px rgba(11,16,32,.14);
+      box-shadow: 0 22px 60px rgba(11,16,32,.16);
       filter: brightness(1.02);
     }
     .btn.primary{
       border-color: rgba(124,58,237,0.25);
-      background: linear-gradient(180deg, rgba(230,221,255,0.98), rgba(255,255,255,0.92));
+      background: linear-gradient(180deg, rgba(230,221,255,0.95), rgba(255,255,255,0.92));
     }
-    .btn.ghost{
-      background: rgba(255,255,255,0.78);
-      box-shadow:none;
-    }
+    .btn.ghost{ background: rgba(255,255,255,0.78); box-shadow:none; }
 
     /* HERO */
-    .hero{
-      padding: 18px 0 12px;
-    }
+    .hero{ padding:18px 0 12px; }
     .grid{
       display:grid;
       grid-template-columns: 1.15fr .85fr;
@@ -240,82 +227,100 @@
         rgba(230,221,255,0.48),
         transparent 64%);
       pointer-events:none;
+      filter: blur(0.6px);
     }
 
     .sub{
-      margin:0 0 10px;
+      margin:0 0 12px;
       color: rgba(11,16,32,0.62);
       font-weight:950;
       text-transform:uppercase;
-      letter-spacing:.45px;
+      letter-spacing:.35px;
       font-size:12px;
     }
 
-    /* ===== TÍTULOS (AJUSTADOS PROFISSIONALMENTE) ===== */
+    /* =========================================================
+       TÍTULO PROFISSIONAL (2 linhas fixas, sem quebrar palavra)
+       ========================================================= */
     .hero-title{
-      margin:0 0 8px;
+      margin:0 0 12px;
       font-family:"Fraunces", ui-serif, Georgia, serif;
 
-      /* menor e mais elegante no geral */
-      font-size: clamp(24px, 4.8vw, 42px);
-      line-height: 1.04;
-      letter-spacing: -0.45px;
-
-      background: linear-gradient(90deg, rgba(11,16,32,0.92), rgba(124,58,237,0.92), rgba(236,72,153,0.82));
-      -webkit-background-clip:text;
-      background-clip:text;
-      color: transparent;
-
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-    }
-    .hero-title .title-line{ display:block; }
-
-    .card-title{
-      margin:0;
-      font-family:"Fraunces", ui-serif, Georgia, serif;
-      font-size: clamp(22px, 4.2vw, 34px);
+      /* desktop/tablet */
+      font-size: clamp(28px, 4.4vw, 46px);
       line-height: 1.06;
       letter-spacing: -0.35px;
 
-      background: linear-gradient(90deg, rgba(11,16,32,0.70), rgba(124,58,237,0.78), rgba(236,72,153,0.70));
+      background: linear-gradient(90deg,
+        rgba(11,16,32,0.76),
+        rgba(124,58,237,0.92),
+        rgba(236,72,153,0.78)
+      );
       -webkit-background-clip:text;
       background-clip:text;
       color: transparent;
 
       display:flex;
       flex-direction:column;
-      gap:6px;
+      gap:10px; /* espaço entre RELACIONAMENTOS e CONSCIENTES */
     }
-    .card-title .title-line{ display:block; }
+    .hero-title .title-line{
+      display:block;
+      white-space: nowrap; /* NÃO deixa quebrar no meio */
+    }
+
+    /* TÍTULO DO CARD secundário (mesmo padrão) */
+    .card-title{
+      margin:0;
+      font-family:"Fraunces", ui-serif, Georgia, serif;
+      font-size: clamp(26px, 4.0vw, 40px);
+      line-height: 1.08;
+      letter-spacing: -0.32px;
+
+      background: linear-gradient(90deg,
+        rgba(11,16,32,0.62),
+        rgba(124,58,237,0.80),
+        rgba(236,72,153,0.70)
+      );
+      -webkit-background-clip:text;
+      background-clip:text;
+      color: transparent;
+
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .card-title .title-line{
+      display:block;
+      white-space: nowrap;
+    }
 
     .lead{
       margin:0 0 10px;
-      font-size: var(--fs-15);
+      font-size:15px;
       color: var(--muted);
-      line-height:1.72;
+      line-height:1.68;
     }
 
     .quote{
-      margin:12px 0 0;
-      padding:14px 14px;
+      margin:14px 0 0;
+      padding:16px 16px;
       border-radius:18px;
       background: rgba(255,255,255,0.94);
-      border:1px solid rgba(124,58,237,0.18);
+      border:1px solid rgba(124,58,237,0.16);
     }
     .quote b{ color: rgba(124,58,237,0.95); }
 
     .bullets{
       display:grid; gap:10px;
-      margin:12px 0 0;
+      margin:14px 0 0;
       padding:0;
       list-style:none;
       color:var(--muted);
     }
     .bullets li{
       display:flex; gap:10px; align-items:flex-start;
-      background: rgba(255,255,255,0.82);
+      background: rgba(255,255,255,0.80);
       border: 1px solid rgba(11,16,32,0.08);
       border-radius: 16px;
       padding:12px 12px;
@@ -331,17 +336,17 @@
       display:flex; gap:10px; flex-wrap:wrap;
       margin-top:12px;
       color: var(--muted2);
-      font-size: 13px;
+      font-size:13px;
     }
     .pill{
       padding:8px 10px;
       border:1px solid rgba(11,16,32,0.10);
       border-radius:999px;
       background: rgba(255,255,255,0.78);
-      font-weight:900;
+      font-weight:800;
     }
 
-    /* SIDE CARD */
+    /* SIDE */
     .side{
       padding:20px;
       display:flex;
@@ -361,10 +366,10 @@
       padding:12px;
       border-radius:18px;
       border:1px solid rgba(11,16,32,0.10);
-      background: rgba(255,255,255,0.94);
+      background: rgba(255,255,255,0.92);
     }
-    .info .big{ font-weight:950; min-width: 92px; }
-    .info .small{ color: var(--muted2); font-size:13px; line-height:1.45; font-weight:800; }
+    .info .big{ font-weight:900; min-width: 92px; }
+    .info .small{ color: var(--muted2); font-size:13px; line-height:1.45; }
 
     .badge{
       display:flex; align-items:center; justify-content:space-between; gap:10px;
@@ -374,22 +379,13 @@
       background: rgba(230,221,255,0.55);
     }
     .badge strong{ font-weight:950; }
-    .badge span{ color:var(--muted); font-weight:850; font-size:13px; }
+    .badge span{ color:var(--muted); font-weight:800; font-size:13px; }
     .badge s{ color: rgba(11,16,32,0.45); }
 
     /* SECTIONS */
     section{ padding:16px 0; }
-    .section-title{
-      margin:0 0 10px;
-      font-size:22px;
-      letter-spacing:-0.2px;
-    }
-    .section-sub{
-      margin:0 0 16px;
-      color: var(--muted);
-      line-height:1.78;
-      font-size: var(--fs-15);
-    }
+    .section-title{ margin:0 0 10px; font-size:22px; letter-spacing:-0.2px; }
+    .section-sub{ margin:0 0 16px; color: var(--muted); line-height:1.72; }
 
     .cols{
       display:grid;
@@ -399,7 +395,7 @@
     .block{
       border-radius: var(--radius);
       border:1px solid rgba(11,16,32,0.10);
-      background: rgba(255,255,255,0.88);
+      background: rgba(255,255,255,0.86);
       padding:18px;
       box-shadow: 0 10px 26px rgba(11,16,32,.06);
     }
@@ -413,16 +409,10 @@
       margin:0; padding:0; list-style:none;
       display:grid; gap:8px;
       color: var(--muted);
-      line-height:1.7;
-      font-size: var(--fs-15);
+      line-height:1.6;
     }
     .check li{ display:flex; gap:10px; align-items:flex-start; }
-    .check li::before{
-      content:"✓";
-      color: rgba(124,58,237,0.95);
-      font-weight:900;
-      margin-top:2px;
-    }
+    .check li::before{ content:"✓"; color: rgba(124,58,237,0.95); font-weight:900; margin-top:1px; }
 
     .split{
       display:grid;
@@ -439,12 +429,12 @@
     .stat{
       border-radius: 18px;
       border:1px solid rgba(11,16,32,0.10);
-      background: rgba(255,255,255,0.92);
+      background: rgba(255,255,255,0.90);
       padding:14px;
       text-align:left;
     }
     .stat .num{
-      font-size:18px;
+      font-size:20px;
       font-weight:950;
       color: rgba(124,58,237,0.95);
       letter-spacing:-0.2px;
@@ -453,7 +443,7 @@
       margin-top:4px;
       color: var(--muted2);
       font-size:13px;
-      font-weight:850;
+      font-weight:800;
       line-height:1.35;
     }
 
@@ -467,11 +457,11 @@
     .t{
       border-radius: var(--radius);
       border:1px solid rgba(11,16,32,0.10);
-      background: rgba(255,255,255,0.88);
+      background: rgba(255,255,255,0.86);
       padding:16px;
       box-shadow: 0 10px 26px rgba(11,16,32,.06);
     }
-    .t p{ margin:0; color: var(--muted); line-height:1.7; font-size: var(--fs-15); }
+    .t p{ margin:0; color: var(--muted); line-height:1.65; }
     .t .who{ margin-top:10px; color: var(--muted2); font-size:13px; font-weight:950; }
 
     /* PIX */
@@ -481,7 +471,7 @@
       text-align:left;
       border-radius: 18px;
       border: 1px solid rgba(124,58,237,0.16);
-      background: rgba(255,255,255,0.92);
+      background: rgba(255,255,255,0.90);
       padding: 16px;
       box-shadow: 0 10px 26px rgba(11,16,32,.06);
     }
@@ -492,19 +482,18 @@
     .pix code{
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
       font-size: 14px;
-      padding: 9px 11px;
+      padding: 8px 10px;
       border-radius: 12px;
       background: rgba(230,221,255,0.55);
       border: 1px solid rgba(124,58,237,0.16);
       user-select: all;
     }
-    .pix small{ color: var(--muted2); font-weight:900; }
+    .pix small{ color: var(--muted2); font-weight:800; }
     .copybtn{
       padding:10px 12px;
-      min-height:44px;
       border-radius: 14px;
       border: 1px solid rgba(11,16,32,0.10);
-      background: rgba(255,255,255,0.94);
+      background: rgba(255,255,255,0.90);
       font-weight: 950;
       cursor: pointer;
       box-shadow: var(--shadow2);
@@ -517,7 +506,7 @@
       display:none;
     }
 
-    /* Foto */
+    /* Foto do mentor */
     .photo-wrap{
       max-width: 360px;
       margin: 0 auto;
@@ -537,7 +526,7 @@
     .faq details{
       border-radius:18px;
       border:1px solid rgba(11,16,32,0.10);
-      background: rgba(255,255,255,0.88);
+      background: rgba(255,255,255,0.86);
       padding:14px;
     }
     .faq details + details{ margin-top:10px; }
@@ -558,8 +547,7 @@
     .faq .ans{
       margin:10px 0 0;
       color: var(--muted);
-      line-height:1.78;
-      font-size: var(--fs-15);
+      line-height:1.72;
     }
 
     /* Footer */
@@ -595,45 +583,55 @@
     .whats-float svg{ width: 28px; height: 28px; fill: #fff; }
     .whats-float:hover{ filter: brightness(1.03); transform: translateY(-1px); }
 
-    /* Responsivo */
+    /* Responsive */
     @media (max-width: 980px){
       nav{ display:none; }
       .brand{ min-width: unset; }
-      .grid{ grid-template-columns: 1fr; }
-      .cols, .split{ grid-template-columns: 1fr; }
-      .stats{ grid-template-columns: 1fr; }
-      .testimonials{ grid-template-columns: 1fr; }
     }
 
-    /* Mobile iPhone: expulsa header do tema + título menor (área circulada) */
+    /* MOBILE / iPHONE (principal) */
     @media (max-width: 430px){
-      :root{ --topbar-h: 64px; }
+      :root{ --topbar-h: 62px; }
       body{ padding-top: calc(var(--topbar-h) + env(safe-area-inset-top, 0px)); }
+
+      /* se algum tema insistir em aparecer, sobe o card para “expulsar” */
+      .main-hero{ margin-top: calc(-1 * var(--topbar-h) - 44px); }
 
       .hero{ padding:10px 0 8px; }
       .card.pad{ padding:16px; }
 
-      /* “puxa” o card principal para cima */
-      .main-hero{ margin-top: calc(-1 * var(--topbar-h) - 64px); }
-
-      /* ✅ título do HERO (círculo vermelho) menor e mais elegante */
+      /* TÍTULO no tamanho do seu exemplo (2 linhas, sem quebrar palavra) */
       .hero-title{
-        font-size: clamp(18px, 6.2vw, 24px);
-        line-height: 1.03;
-        letter-spacing: -0.22px;
-        gap: 4px;
-      }
-
-      .card-title{
-        font-size: clamp(18px, 6.0vw, 24px);
+        font-size: clamp(22px, 7.2vw, 32px);
+        line-height: 1.08;
         letter-spacing: -0.25px;
+        gap: 8px;
+      }
+      .card-title{
+        font-size: clamp(22px, 7.0vw, 30px);
+        line-height: 1.10;
+        letter-spacing: -0.25px;
+        gap: 8px;
       }
 
       .sub{ font-size:11px; }
-      .lead, .section-sub, .check, .t p, .faq .ans{ font-size: 14.5px; }
+      .lead{ font-size:14.5px; }
+
+      .grid{ grid-template-columns: 1fr; }
+      .cols, .split{ grid-template-columns: 1fr; }
+
+      .stats{ grid-template-columns: 1fr; }
+      .testimonials{ grid-template-columns: 1fr; }
 
       .photo-wrap{ max-width: 260px; }
       .photo-wrap img{ height: 210px; }
+    }
+
+    @media (max-width: 920px){
+      .grid{ grid-template-columns: 1fr; }
+      .cols, .split{ grid-template-columns: 1fr; }
+      .stats{ grid-template-columns: 1fr; }
+      .testimonials{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -684,7 +682,7 @@
           </p>
 
           <div class="quote">
-            <div style="color:var(--muted); line-height:1.78;">
+            <div style="color:var(--muted); line-height:1.72;">
               Relacionamento não é sobre encontrar alguém.<br />
               É sobre o <b>lugar interno</b> a partir do qual eu me relaciono.
             </div>
@@ -719,14 +717,17 @@
             <div class="big">📅 Datas</div>
             <div class="small"><b style="color: rgba(124,58,237,0.95);">19 e 20/02/2026</b></div>
           </div>
+
           <div class="info">
             <div class="big">⏰ Horário</div>
             <div class="small"><b style="color: rgba(124,58,237,0.95);">20h</b></div>
           </div>
+
           <div class="info">
             <div class="big">⏳ Duração</div>
             <div class="small"><b style="color: rgba(124,58,237,0.95);">2h por noite</b></div>
           </div>
+
           <div class="info">
             <div class="big">📍 Formato</div>
             <div class="small"><b style="color: rgba(124,58,237,0.95);">Online</b></div>
@@ -743,7 +744,7 @@
             <span>⭐</span>
           </div>
 
-          <p style="margin:6px 0 0; color:var(--muted); line-height:1.78;">
+          <p style="margin:6px 0 0; color:var(--muted); line-height:1.72;">
             Um workshop de duas noites para quem cansou de repetir padrões,
             se perder de si e deseja se relacionar a partir de um lugar mais
             consciente, adulto e verdadeiro.
@@ -796,9 +797,18 @@
           </div>
 
           <div class="stats" aria-label="Resultados esperados">
-            <div class="stat"><div class="num">+ clareza</div><div class="lbl">entender o padrão sem autoengano</div></div>
-            <div class="stat"><div class="num">+ presença</div><div class="lbl">sair do automático e voltar para si</div></div>
-            <div class="stat"><div class="num">+ direção</div><div class="lbl">ajustar, sustentar ou encerrar com respeito</div></div>
+            <div class="stat">
+              <div class="num">+ clareza</div>
+              <div class="lbl">entender o padrão sem autoengano</div>
+            </div>
+            <div class="stat">
+              <div class="num">+ presença</div>
+              <div class="lbl">sair do automático e voltar para si</div>
+            </div>
+            <div class="stat">
+              <div class="num">+ direção</div>
+              <div class="lbl">ajustar, sustentar ou encerrar com respeito</div>
+            </div>
           </div>
         </div>
       </div>
@@ -820,8 +830,7 @@
               <li>Não é um curso “racional” de comunicação.</li>
             </ul>
             <p class="section-sub" style="margin-top:12px;">
-              É um espaço de <b>consciência</b>, <b>acolhimento</b> e <b>reposicionamento interno</b>:
-              para sair do vínculo inconsciente (padrão) e caminhar para o encontro real (presença).
+              É um espaço de <b>consciência</b>, <b>acolhimento</b> e <b>reposicionamento interno</b>.
             </p>
           </div>
 
@@ -832,14 +841,12 @@
               carência, medo de abandono, necessidade de aprovação ou tentativa de preencher vazios emocionais.
             </p>
             <div class="quote" style="margin:0;">
-              <div style="color:var(--muted); line-height:1.78;">
+              <div style="color:var(--muted); line-height:1.72;">
                 <b>Adulto não ama implorando.</b><br />
                 Adulto ama escolhendo.
               </div>
             </div>
-            <p class="section-sub" style="margin-top:12px;">
-              Quando o lugar interno muda, a relação responde.
-            </p>
+            <p class="section-sub" style="margin-top:12px;">Quando o lugar interno muda, a relação responde.</p>
           </div>
         </div>
       </div>
@@ -858,9 +865,7 @@
           <div class="cols">
             <div class="block">
               <h3>🌙 Noite 1 — O vínculo inconsciente</h3>
-              <p class="section-sub" style="margin:0 0 10px;">
-                <b>Objetivo:</b> entender por que dói e por que se repete.
-              </p>
+              <p class="section-sub" style="margin:0 0 10px;"><b>Objetivo:</b> entender por que dói e por que se repete.</p>
               <ul class="check">
                 <li>Padrões repetitivos nos relacionamentos</li>
                 <li>De onde vem o seu jeito de amar</li>
@@ -872,9 +877,7 @@
 
             <div class="block">
               <h3>🌙 Noite 2 — O encontro real</h3>
-              <p class="section-sub" style="margin:0 0 10px;">
-                <b>Objetivo:</b> saber o que fazer a partir de agora.
-              </p>
+              <p class="section-sub" style="margin:0 0 10px;"><b>Objetivo:</b> saber o que fazer a partir de agora.</p>
               <ul class="check">
                 <li>O lugar adulto no relacionamento</li>
                 <li>Comunicação consciente (sem ataque e sem defesa)</li>
@@ -902,12 +905,11 @@
                 Mentor em desenvolvimento emocional e relacional.
               </p>
               <p class="section-sub" style="margin:0;">
-                Um trabalho voltado para reposicionamento interno e clareza emocional:
-                organizar o lugar de onde você se relaciona para viver relações mais conscientes, leves e verdadeiras.
+                Um trabalho voltado para reposicionamento interno e clareza emocional.
               </p>
 
               <div class="quote">
-                <div style="color:var(--muted); line-height:1.78;">
+                <div style="color:var(--muted); line-height:1.72;">
                   <b>Não é falta de amor.</b><br />
                   Muitas vezes, é falta de lugar.
                 </div>
@@ -939,7 +941,7 @@
           </p>
 
           <div class="quote" style="margin-top:10px;">
-            <div style="color:var(--muted); line-height:1.78;">
+            <div style="color:var(--muted); line-height:1.72;">
               Relacionamento não é sobre encontrar alguém.<br />
               É sobre o <b>lugar interno</b> a partir do qual eu me relaciono.
             </div>
@@ -974,10 +976,14 @@
             <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
               <a class="btn primary"
                  href="https://wa.me/5549998110445?text=Ol%C3%A1!%20Fiz%20o%20PIX%20do%20Workshop%20Relacionamentos%20Conscientes%20(CNPJ%2048674960000163%20-%20EA%20Favoretto%20LTDA)%20e%20vou%20enviar%20o%20comprovante.%20Pode%20confirmar%20minha%20vaga%3F"
-                 target="_blank" rel="noopener">Enviar comprovante no WhatsApp</a>
+                 target="_blank" rel="noopener">
+                Enviar comprovante no WhatsApp
+              </a>
               <a class="btn ghost"
                  href="https://wa.me/5549998110445?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Workshop%20Relacionamentos%20Conscientes."
-                 target="_blank" rel="noopener">Tirar dúvida no WhatsApp</a>
+                 target="_blank" rel="noopener">
+                Tirar dúvida no WhatsApp
+              </a>
             </div>
 
             <p style="margin:12px 0 0; color:var(--muted2); font-size:13px; line-height:1.6;">
@@ -1029,7 +1035,7 @@
 
           <details>
             <summary>Isso é terapia em grupo?</summary>
-            <p class="ans">Não. É um workshop de consciência e reposicionamento interno. Você participa com presença, exercícios e reflexões, sem necessidade de exposição pessoal.</p>
+            <p class="ans">Não. É um workshop de consciência e reposicionamento interno. Você participa sem necessidade de exposição pessoal.</p>
           </details>
 
           <details>
@@ -1058,7 +1064,9 @@
         <div>
           <div style="font-weight:950; color:var(--text);">Relacionamentos Conscientes</div>
           <div style="color:var(--muted2);">Do vínculo inconsciente ao encontro real</div>
-          <div style="margin-top:6px;">Contato: <a href="https://wa.me/5549998110445" target="_blank" rel="noopener">(49) 99811-0445</a></div>
+          <div style="margin-top:6px;">
+            Contato: <a href="https://wa.me/5549998110445" target="_blank" rel="noopener">(49) 99811-0445</a>
+          </div>
         </div>
 
         <div style="text-align:right;">
