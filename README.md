@@ -578,7 +578,7 @@
       .card.pad{ padding:16px; }
 
       h1{
-        font-size: clamp(28px, 9.2vw, 40px);
+        font-size: clamp(26px, 7.6vw, 40px);
         letter-spacing: -0.6px;
       }
 
