@@ -28,6 +28,34 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800;900&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+/* ===== OVERRIDE: Títulos menores ===== */
+.hero-title{
+  /* antes: clamp(28px, 6.2vw, 58px) */
+  font-size: clamp(26px, 5.0vw, 44px);
+  line-height: 1.04;
+  letter-spacing: -0.4px;
+}
+
+.card-title{
+  /* antes: clamp(26px, 5.6vw, 44px) */
+  font-size: clamp(24px, 4.6vw, 36px);
+  line-height: 1.06;
+  letter-spacing: -0.35px;
+}
+
+/* Mobile (iPhone) */
+@media (max-width: 430px){
+  .hero-title{
+    /* antes: clamp(22px, 8.2vw, 34px) */
+    font-size: clamp(20px, 7.0vw, 28px);
+    letter-spacing: -0.3px;
+  }
+  .card-title{
+    /* antes: clamp(20px, 7.2vw, 30px) */
+    font-size: clamp(18px, 6.4vw, 24px);
+    letter-spacing: -0.25px;
+  }
+}
 
   <style>
     :root{
