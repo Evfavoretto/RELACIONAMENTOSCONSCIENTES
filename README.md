@@ -104,9 +104,9 @@
     .hero-title{
       margin:0 0 8px;
       font-family:"Fraunces",ui-serif,Georgia,serif;
-      font-size: clamp(26px, 5vw, 44px);  /* reduzido */
+      font-size: clamp(22px, 4.2vw, 38px);  /* reduzido */
       line-height: 1.04;
-      letter-spacing: -0.4px;
+      letter-spacing: -0.3px;
       background: linear-gradient(90deg, rgba(11,16,32,0.92), rgba(124,58,237,0.92), rgba(236,72,153,0.80));
       -webkit-background-clip:text; background-clip:text; color:transparent;
       display:flex;flex-direction:column;gap:6px;
