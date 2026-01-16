@@ -14,12 +14,12 @@
   <meta property="og:description" content="Do vínculo inconsciente ao encontro real. Relacionamento não é sobre encontrar alguém. É sobre o lugar interno a partir do qual eu me relaciono." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
-  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Relacionamentos+Conscientes" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x530.png?text=Relacionamentos+Conscientes" />
   <meta property="og:url" content="https://seu-dominio.com/relacionamentos-conscientes" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Relacionamentos Conscientes | Workshop" />
   <meta name="twitter:description" content="Do vínculo inconsciente ao encontro real. 19 e 20/02/2026 às 20h." />
-  <meta name="twitter:image" content="https://via.placeholder.com/1200x630.png?text=Relacionamentos+Conscientes" />
+  <meta name="twitter:image" content="https://via.placeholder.com/1200x530.png?text=Relacionamentos+Conscientes" />
 
   <link rel="icon" href="https://via.placeholder.com/64.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -234,7 +234,8 @@
         <a class="brand" href="#topo" aria-label="Ir ao topo">
           <span class="mark" aria-hidden="true"></span>
           <div>
-            <strong>Relacionamentos Conscientes</strong>
+            <strong>Relacionamentos</strong>
+             <strong> Conscientes</strong>
             <span>Do vínculo inconsciente ao encontro real</span>
           </div>
         </a>
