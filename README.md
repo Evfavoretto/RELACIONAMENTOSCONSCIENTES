@@ -7,7 +7,7 @@
   <title>Relacionamentos Conscientes | Workshop (19 e 20/02/2026 às 20h)</title>
   <meta name="description" content="Workshop de duas noites: Relacionamentos Conscientes — Do vínculo inconsciente ao encontro real. 19 e 20 de fevereiro de 2026 às 20h." />
 
-  <!-- Canonical (troque pelo seu domínio/URL final quando publicar) -->
+  <!-- Canonical (troque pela URL final) -->
   <link rel="canonical" href="https://seu-dominio.com/relacionamentos-conscientes" />
 
   <!-- Open Graph -->
@@ -26,7 +26,6 @@
 
   <link rel="icon" href="https://via.placeholder.com/64.png" />
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
@@ -55,7 +54,14 @@
       --max:1140px;
 
       --focus:0 0 0 4px rgba(124,58,237,0.25);
-      --topbar-h:70px;
+      --topbar-h:68px;
+
+      /* Tipos base (desktop) */
+      --h1: clamp(44px, 5.4vw, 84px);
+      --lead: 15.5px;
+      --p: 15px;
+      --sub: 12px;
+      --sec-title: 22px;
     }
 
     *{ box-sizing:border-box; }
@@ -92,17 +98,13 @@
     /* GitHub Pages tema */
     body > h1,
     body > header:not(.hero),
-    .page-header,
-    .site-header,
-    header.page-header,
-    header.site-header,
-    #header, #header_wrap, #header-wrap,
-    #project_title, #project_tagline,
-    .project-name, .project-tagline,
-    #title, #subtitle,
-    #forkme_banner, .ribbon,
-    .github-corner,
-    .gh-header, .gh-head {
+    .page-header,.site-header,header.page-header,header.site-header,
+    #header,#header_wrap,#header-wrap,
+    #project_title,#project_tagline,
+    .project-name,.project-tagline,
+    #title,#subtitle,
+    #forkme_banner,.ribbon,
+    .github-corner,.gh-header,.gh-head{
       display:none !important;
       height:0 !important;
       margin:0 !important;
@@ -115,7 +117,7 @@
       position:fixed; left:0; right:0; top:0;
       height:var(--topbar-h);
       z-index:80;
-      background: rgba(255,255,255,.76);
+      background: rgba(255,255,255,.78);
       backdrop-filter: blur(12px);
       border-bottom:1px solid var(--stroke);
       display:flex; align-items:center;
@@ -142,6 +144,7 @@
       color: var(--muted);
       font-weight:800;
       white-space:nowrap;
+      font-size:13px;
     }
     .dot{
       width:10px; height:10px; border-radius:999px;
@@ -149,14 +152,14 @@
       box-shadow: 0 0 0 6px rgba(236,72,153,0.12);
       flex:0 0 auto;
     }
-
-    nav{ display:flex; gap:14px; align-items:center; justify-content:center; flex:1; }
+    nav{ display:flex; gap:12px; align-items:center; justify-content:center; flex:1; }
     nav a{
       padding:9px 10px; border-radius:999px;
       font-weight:800; color:var(--muted);
       border:1px solid transparent;
       transition: background .15s ease, border-color .15s ease, transform .15s ease;
       white-space:nowrap;
+      font-size:13px;
     }
     nav a:hover{
       background: rgba(255,255,255,.75);
@@ -164,7 +167,6 @@
       transform: translateY(-1px);
       color: var(--text);
     }
-
     .actions{ display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; min-width:240px; }
 
     .btn{
@@ -176,6 +178,7 @@
       font-weight:900;
       box-shadow: var(--shadow2);
       transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease, filter .15s ease;
+      font-size:13.5px;
     }
     .btn:hover{
       transform: translateY(-1px);
@@ -190,11 +193,11 @@
     .btn.ghost{ background: rgba(255,255,255,0.78); box-shadow:none; }
 
     /* HERO */
-    .hero{ padding:22px 0 14px; }
+    .hero{ padding:18px 0 12px; }
     .grid{
       display:grid;
       grid-template-columns: 1.15fr .85fr;
-      gap:18px;
+      gap:16px;
       align-items:stretch;
     }
     .card{
@@ -205,7 +208,7 @@
       position:relative;
       overflow:hidden;
     }
-    .card.pad{ padding:20px; }
+    .card.pad{ padding:18px; }
 
     .glow{
       position:absolute; inset:-150px -160px auto auto;
@@ -224,30 +227,28 @@
       font-weight:950;
       text-transform:uppercase;
       letter-spacing:.35px;
-      font-size:12px;
+      font-size: var(--sub);
     }
 
-    /* Título sem quebra estranha no mobile */
+    /* H1 CONTROLADO (sem estourar) */
     h1{
       margin:0 0 8px;
       font-family:"Fraunces", ui-serif, Georgia, serif;
-      font-size: clamp(42px, 6.2vw, 86px);
-      line-height: 0.98;
-      letter-spacing: -1.10px;
+      font-size: var(--h1);
+      line-height: 1.02;
+      letter-spacing: -0.9px;
       background: linear-gradient(90deg, rgba(11,16,32,0.92), rgba(124,58,237,0.92), rgba(236,72,153,0.80));
       -webkit-background-clip:text;
       background-clip:text;
       color: transparent;
-      word-break: keep-all;
-      overflow-wrap: normal;
-      hyphens: none;
     }
+    h1 span{ display:inline-block; }
 
     .lead{
       margin:0 0 12px;
-      font-size:15.5px;
+      font-size: var(--lead);
       color: var(--muted);
-      line-height:1.7;
+      line-height:1.65;
     }
 
     .bullets{
@@ -256,13 +257,14 @@
       padding:0;
       list-style:none;
       color:var(--muted);
+      font-size: var(--p);
     }
     .bullets li{
       display:flex; gap:10px; align-items:flex-start;
       background: rgba(255,255,255,0.78);
       border: 1px solid rgba(11,16,32,0.08);
       border-radius: 16px;
-      padding:12px 12px;
+      padding:10px 12px;
     }
     .bullets li::before{
       content:"✦";
@@ -273,10 +275,11 @@
 
     .quote{
       margin:12px 0 0;
-      padding:14px 14px;
+      padding:12px 12px;
       border-radius:18px;
       background: rgba(255,255,255,0.92);
       border:1px solid rgba(124,58,237,0.18);
+      font-size: var(--p);
     }
     .quote b{ color: rgba(124,58,237,0.95); }
 
@@ -284,10 +287,10 @@
       display:flex; gap:10px; flex-wrap:wrap;
       margin-top:12px;
       color: var(--muted2);
-      font-size:13px;
+      font-size:12.5px;
     }
     .pill{
-      padding:8px 10px;
+      padding:7px 10px;
       border:1px solid rgba(11,16,32,0.10);
       border-radius:999px;
       background: rgba(255,255,255,0.78);
@@ -296,7 +299,7 @@
 
     /* SIDE CARD */
     .side{
-      padding:20px;
+      padding:18px;
       display:flex;
       flex-direction:column;
       gap:12px;
@@ -307,7 +310,7 @@
       font-weight:950;
       letter-spacing:.2px;
       color: rgba(124,58,237,0.95);
-      font-size:16px;
+      font-size:15px;
     }
     .info{
       display:flex; align-items:flex-start; gap:10px;
@@ -316,7 +319,7 @@
       border:1px solid rgba(11,16,32,0.10);
       background: rgba(255,255,255,0.92);
     }
-    .info .big{ font-weight:900; min-width: 92px; }
+    .info .big{ font-weight:900; min-width: 92px; font-size:13px; }
     .info .small{ color: var(--muted2); font-size:13px; line-height:1.45; }
 
     .badge{
@@ -332,24 +335,38 @@
 
     /* SECTIONS */
     section{ padding:16px 0; }
-    .section-title{ margin:0 0 10px; font-size:22px; letter-spacing:-0.2px; }
-    .section-sub{ margin:0 0 16px; color: var(--muted); line-height:1.72; }
+    .section-title{
+      margin:0 0 10px;
+      font-size: var(--sec-title);
+      letter-spacing:-0.2px;
+    }
+    .section-sub{
+      margin:0 0 16px;
+      color: var(--muted);
+      line-height:1.68;
+      font-size: var(--p);
+    }
 
     .cols{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
     .block{
       border-radius: var(--radius);
       border:1px solid rgba(11,16,32,0.10);
       background: rgba(255,255,255,0.86);
-      padding:18px;
+      padding:16px;
       box-shadow: 0 10px 26px rgba(11,16,32,.06);
     }
-    .block h3{ margin:0 0 10px; color: rgba(124,58,237,0.95); font-size:17px; }
+    .block h3{
+      margin:0 0 10px;
+      color: rgba(124,58,237,0.95);
+      font-size:16px;
+    }
 
     .check{
       margin:0; padding:0; list-style:none;
       display:grid; gap:8px;
       color: var(--muted);
       line-height:1.6;
+      font-size: var(--p);
     }
     .check li{ display:flex; gap:10px; align-items:flex-start; }
     .check li::before{ content:"✓"; color: rgba(124,58,237,0.95); font-weight:900; margin-top:1px; }
@@ -368,8 +385,8 @@
       padding:14px;
       text-align:left;
     }
-    .stat .num{ font-size:20px; font-weight:950; color: rgba(124,58,237,0.95); }
-    .stat .lbl{ margin-top:4px; color: var(--muted2); font-size:13px; font-weight:800; line-height:1.35; }
+    .stat .num{ font-size:18px; font-weight:950; color: rgba(124,58,237,0.95); }
+    .stat .lbl{ margin-top:4px; color: var(--muted2); font-size:12.5px; font-weight:800; line-height:1.35; }
 
     /* Depoimentos sem foto */
     .testimonials{
@@ -382,13 +399,13 @@
       border-radius: var(--radius);
       border:1px solid rgba(11,16,32,0.10);
       background: rgba(255,255,255,0.86);
-      padding:16px;
+      padding:14px;
       box-shadow: 0 10px 26px rgba(11,16,32,.06);
     }
-    .t p{ margin:0; color: var(--muted); line-height:1.65; }
-    .t .who{ margin-top:10px; color: var(--muted2); font-size:13px; font-weight:950; }
+    .t p{ margin:0; color: var(--muted); line-height:1.6; font-size: var(--p); }
+    .t .who{ margin-top:10px; color: var(--muted2); font-size:12.5px; font-weight:950; }
 
-    /* PIX (seção única) */
+    /* PIX */
     .pix{
       margin: 14px auto 0;
       max-width: 920px;
@@ -405,14 +422,14 @@
     }
     .pix code{
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: 14px;
+      font-size: 13px;
       padding: 8px 10px;
       border-radius: 12px;
       background: rgba(230,221,255,0.55);
       border: 1px solid rgba(124,58,237,0.16);
       user-select: all;
     }
-    .pix small{ color: var(--muted2); font-weight:800; }
+    .pix small{ color: var(--muted2); font-weight:800; font-size:12px; }
     .copybtn{
       padding:10px 12px;
       border-radius: 14px;
@@ -421,6 +438,7 @@
       font-weight: 950;
       cursor: pointer;
       box-shadow: var(--shadow2);
+      font-size:13px;
     }
     .copybtn:hover{ transform: translateY(-1px); }
     .toast{
@@ -428,18 +446,19 @@
       color: rgba(124,58,237,0.95);
       font-weight: 950;
       display:none;
+      font-size: 13px;
     }
 
-    /* Foto (menor no mobile) */
+    /* Foto menor */
     .photo-wrap{
-      max-width: 360px;
+      max-width: 340px;
       margin: 0 auto;
-      padding: 14px;
+      padding: 12px;
       text-align:center;
     }
     .photo-wrap img{
       width: 100%;
-      height: 320px;
+      height: 300px;
       object-fit: cover;
       border-radius:18px;
       border:1px solid rgba(11,16,32,0.10);
@@ -459,6 +478,7 @@
       font-weight:950;
       color: var(--text);
       list-style:none;
+      font-size: 14px;
     }
     .faq summary::-webkit-details-marker{ display:none; }
     .faq summary::after{
@@ -468,7 +488,7 @@
       color: rgba(124,58,237,0.95);
     }
     .faq details[open] summary::after{ content:"–"; }
-    .faq .ans{ margin:10px 0 0; color: var(--muted); line-height:1.72; }
+    .faq .ans{ margin:10px 0 0; color: var(--muted); line-height:1.65; font-size: var(--p); }
 
     /* Footer */
     footer{
@@ -489,7 +509,7 @@
     .whats-float{
       position: fixed;
       right: 16px;
-      bottom: 18px;
+      bottom: 16px;
       width: 54px;
       height: 54px;
       border-radius: 18px;
@@ -503,30 +523,50 @@
     .whats-float svg{ width: 28px; height: 28px; fill: #fff; }
     .whats-float:hover{ filter: brightness(1.03); transform: translateY(-1px); }
 
-    /* Responsive */
+    /* RESPONSIVO (MOBILE MENOR DE VERDADE) */
     @media (max-width: 980px){
       nav{ display:none; }
       .brand{ min-width: unset; }
     }
     @media (max-width: 920px){
-      :root{ --topbar-h: 62px; }
+      :root{
+        --topbar-h: 60px;
+
+        /* >>> aqui está o ajuste principal do “texto grande” <<< */
+        --h1: clamp(28px, 8.3vw, 40px);
+        --lead: 13.8px;
+        --p: 13.5px;
+        --sub: 11px;
+        --sec-title: 19px;
+      }
+
       body{ padding-top: var(--topbar-h); }
 
       .grid{ grid-template-columns: 1fr; }
       .cols, .split{ grid-template-columns: 1fr; }
       .actions{ display:none; }
-
-      .hero{ padding:16px 0 10px; }
-      .card.pad{ padding:16px; }
-
-      h1{ font-size: clamp(34px, 9.6vw, 52px); }
       .datepill{ display:none; }
+
+      .hero{ padding:12px 0 10px; }
+      .card.pad{ padding:14px; }
+
+      .bullets li{ padding:10px 10px; }
+      .quote{ padding:10px 10px; }
 
       .stats{ grid-template-columns: 1fr; }
       .testimonials{ grid-template-columns: 1fr; }
 
-      .photo-wrap{ max-width: 260px; padding: 10px; }
-      .photo-wrap img{ height: 210px; }
+      .photo-wrap{ max-width: 240px; padding: 8px; }
+      .photo-wrap img{ height: 200px; }
+    }
+
+    @media (max-width: 380px){
+      :root{
+        --h1: 26px;
+        --lead: 13.2px;
+        --p: 13.2px;
+      }
+      .btn{ padding:11px 14px; }
     }
   </style>
 </head>
@@ -583,7 +623,7 @@
           </p>
 
           <div class="quote">
-            <div style="color:var(--muted); line-height:1.72;">
+            <div style="color:var(--muted); line-height:1.65;">
               Relacionamento não é sobre encontrar alguém.<br />
               É sobre o <b>lugar interno</b> a partir do qual eu me relaciono.
             </div>
@@ -600,8 +640,8 @@
             Talvez não seja falta de amor. Talvez seja falta de lugar.
           </p>
 
-          <!-- PIX (1/2) -->
-          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+          <!-- PIX (botão 1/2) -->
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
             <a class="btn primary" href="#pix">Pagamento via PIX</a>
             <a class="btn ghost" href="#paraquem">É pra mim?</a>
           </div>
@@ -646,16 +686,16 @@
             <span>⭐</span>
           </div>
 
-          <p style="margin:6px 0 0; color:var(--muted); line-height:1.72;">
+          <p style="margin:6px 0 0; color:var(--muted); line-height:1.65; font-size: var(--p);">
             Um workshop de duas noites para quem cansou de repetir padrões,
             se perder de si e deseja se relacionar a partir de um lugar mais
             consciente, adulto e verdadeiro.
           </p>
 
-          <!-- PIX (2/2) -->
+          <!-- PIX (botão 2/2) -->
           <a class="btn primary" href="#pix">Pagamento via PIX</a>
 
-          <p style="margin:0; color:var(--muted2); font-size:13px; line-height:1.6;">
+          <p style="margin:0; color:var(--muted2); font-size:12.5px; line-height:1.55;">
             Após pagar no PIX, envie o comprovante no WhatsApp para confirmar sua vaga.
           </p>
 
@@ -752,7 +792,7 @@
               carência, medo de abandono, necessidade de aprovação ou tentativa de preencher vazios emocionais.
             </p>
             <div class="quote" style="margin:0;">
-              <div style="color:var(--muted); line-height:1.72;">
+              <div style="color:var(--muted); line-height:1.65;">
                 <b>Adulto não ama implorando.</b><br />
                 Adulto ama escolhendo.
               </div>
@@ -827,7 +867,7 @@
               </p>
 
               <div class="quote">
-                <div style="color:var(--muted); line-height:1.72;">
+                <div style="color:var(--muted); line-height:1.65;">
                   <b>Não é falta de amor.</b><br />
                   Muitas vezes, é falta de lugar.
                 </div>
@@ -843,7 +883,7 @@
       </div>
     </section>
 
-    <!-- PAGAMENTO PIX (SEÇÃO ÚNICA) -->
+    <!-- PAGAMENTO PIX (seção única) -->
     <section id="pix">
       <div class="wrap">
         <div class="card pad">
@@ -877,8 +917,8 @@
               <a class="btn ghost" href="#conteudo">Voltar ao conteúdo</a>
             </div>
 
-            <p style="margin:12px 0 0; color:var(--muted2); font-size:13px; line-height:1.6;">
-              Dica: ao enviar o comprovante, informe seu <b>nome completo</b> para facilitar a confirmação.
+            <p style="margin:12px 0 0; color:var(--muted2); font-size:12.5px; line-height:1.55;">
+              Dica: ao enviar o comprovante, informe seu <b>nome completo</b>.
             </p>
           </div>
         </div>
