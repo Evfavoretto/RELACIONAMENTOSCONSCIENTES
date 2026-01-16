@@ -34,7 +34,6 @@
 
   <style>
     :root{
-      /* Paleta (mantém sua identidade, com ajustes) */
       --blue:   #cfeeff;
       --lilac:  #e6ddff;
       --pink:   #ffe3f1;
@@ -44,8 +43,8 @@
       --muted:  rgba(11,16,32,0.70);
       --muted2: rgba(11,16,32,0.56);
 
-      --accent: #7c3aed; /* roxo */
-      --accent2:#ec4899; /* rosa */
+      --accent: #7c3aed;
+      --accent2:#ec4899;
       --stroke: rgba(11,16,32,0.12);
 
       --card:   rgba(255,255,255,0.78);
@@ -92,9 +91,7 @@
     }
     :focus-visible{ outline:none; box-shadow: var(--focus); border-radius:14px; }
 
-    /* ============================================================
-       KILL SWITCH — remove header/título do GitHub Pages / Jekyll
-       ============================================================ */
+    /* GitHub Pages tema */
     body > h1,
     body > header:not(.hero),
     .page-header,
@@ -358,9 +355,10 @@
     }
     .badge strong{ font-weight:950; }
     .badge span{ color:var(--muted); font-weight:800; font-size:13px; }
+    .badge s{ color: rgba(11,16,32,0.45); }
 
     /* SECTIONS */
-    main{ padding-bottom: 90px; } /* espaço pro CTA mobile */
+    main{ padding-bottom: 110px; } /* espaço pro CTA mobile */
     section{ padding:18px 0; }
     .section-title{
       margin:0 0 10px;
@@ -414,7 +412,6 @@
       align-items:stretch;
     }
 
-    /* Social proof / Results */
     .stats{
       display:grid; gap:12px;
       grid-template-columns: repeat(3, 1fr);
@@ -441,7 +438,6 @@
       line-height:1.35;
     }
 
-    /* Testimonials */
     .testimonials{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -494,6 +490,48 @@
       line-height:1.75;
     }
 
+    /* PIX */
+    .pix{
+      margin: 14px auto 0;
+      max-width: 920px;
+      text-align:left;
+      border-radius: 18px;
+      border: 1px solid rgba(124,58,237,0.16);
+      background: rgba(255,255,255,0.90);
+      padding: 16px;
+      box-shadow: 0 10px 26px rgba(11,16,32,.06);
+    }
+    .pix .row{
+      display:flex; gap:12px; flex-wrap:wrap;
+      align-items:center; justify-content:space-between;
+    }
+    .pix code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 14px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: rgba(230,221,255,0.55);
+      border: 1px solid rgba(124,58,237,0.16);
+      user-select: all;
+    }
+    .pix small{ color: var(--muted2); font-weight:800; }
+    .copybtn{
+      padding:10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(11,16,32,0.10);
+      background: rgba(255,255,255,0.90);
+      font-weight: 950;
+      cursor: pointer;
+      box-shadow: var(--shadow2);
+    }
+    .copybtn:hover{ transform: translateY(-1px); }
+    .toast{
+      margin-top: 10px;
+      color: rgba(124,58,237,0.95);
+      font-weight: 950;
+      display:none;
+    }
+
     /* FAQ */
     .faq details{
       border-radius:18px;
@@ -541,7 +579,7 @@
     .whats-float{
       position: fixed;
       right: 18px;
-      bottom: 98px; /* acima do CTA mobile */
+      bottom: 98px;
       width: 56px;
       height: 56px;
       border-radius: 18px;
@@ -550,6 +588,7 @@
       box-shadow: 0 18px 40px rgba(11,16,32,.22);
       z-index: 60;
       border: 1px solid rgba(255,255,255,0.25);
+      transition: transform .15s ease, filter .15s ease;
     }
     .whats-float svg{ width: 28px; height: 28px; fill: #fff; }
     .whats-float:hover{ filter: brightness(1.03); transform: translateY(-1px); }
@@ -577,7 +616,6 @@
     }
     .sticky-cta .meta b{ color: rgba(124,58,237,0.95); }
 
-    /* Responsive */
     @media (max-width: 980px){
       nav{ display:none; }
       .brand{ min-width: unset; }
@@ -623,7 +661,7 @@
 
         <div class="actions">
           <a class="btn ghost" href="#conteudo">Ver conteúdo</a>
-          <a class="btn primary" href="#inscricao">Quero participar</a>
+          <a class="btn primary" href="#pagamento">Pagamento (PIX)</a>
         </div>
       </div>
     </div>
@@ -663,9 +701,9 @@
             Talvez não seja falta de amor. Talvez seja falta de lugar.
           </p>
 
-          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;" id="inscricao">
-            <a class="btn primary" href="https://wa.me/5549998110445?text=Ol%C3%A1!%20Quero%20participar%20do%20Workshop%20Relacionamentos%20Conscientes%20(19%20e%2020%2F02%2F2026%20%C3%A0s%2020h).%20Pode%20me%20enviar%20os%20detalhes%3F" target="_blank" rel="noopener">
-              Quero participar do workshop
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;" id="pagamento">
+            <a class="btn primary" href="#pix">
+              Ver pagamento via PIX
             </a>
             <a class="btn ghost" href="#paraquem">É pra mim?</a>
           </div>
@@ -691,20 +729,23 @@
 
           <div class="info">
             <div class="big">⏳ Duração</div>
-            <div class="small"><b style="color: rgba(124,58,237,0.95);"> 2h por noite</b></div>
+            <div class="small"><b style="color: rgba(124,58,237,0.95);">2h por noite</b></div>
           </div>
 
           <div class="info">
             <div class="big">📍 Formato</div>
-            <div class="small"><b style="color: rgba(124,58,237,0.95);">Online</b> </div>
+            <div class="small"><b style="color: rgba(124,58,237,0.95);">Online</b></div>
           </div>
 
-          <div class="badge" aria-label="Vagas e investimento (placeholder)">
+          <div class="badge" aria-label="Vagas e investimento">
             <div>
               <strong>Vagas limitadas</strong><br />
-              <span>Investimento:De R$260,00 por R$44,00   <b style="color: rgba(124,58,237,0.95);">[R$ ___]</b></span>
+              <span>
+                <s>De R$ 260,00</s><br />
+                <b style="color: rgba(124,58,237,0.95); font-size:18px;">Por R$ 44,00</b>
+              </span>
             </div>
-           <span>⭐</span>
+            <span>⭐</span>
           </div>
 
           <p style="margin:6px 0 0; color:var(--muted); line-height:1.75;">
@@ -713,17 +754,21 @@
             consciente, adulto e verdadeiro.
           </p>
 
-          <a class="btn primary"
-             href="https://wa.me/5549998110445?text=Ol%C3%A1!%20Quero%20participar%20do%20Workshop%20Relacionamentos%20Conscientes%20(19%20e%2020%2F02%2F2026%20%C3%A0s%2020h).%20Pode%20me%20enviar%20os%20detalhes%3F"
-             target="_blank" rel="noopener">
-            Receber detalhes no WhatsApp
+          <a class="btn primary" href="#pix">
+            Fazer pagamento via PIX
           </a>
 
           <a class="btn ghost" href="#conteudo">Ver o que será trabalhado</a>
 
           <p style="margin:0; color:var(--muted2); font-size:13px; line-height:1.6;">
-            *Se você tiver checkout, troque o botão principal pelo link de pagamento e deixe o WhatsApp como suporte.*
+            Após pagar no PIX, envie o comprovante no WhatsApp para confirmar sua vaga.
           </p>
+
+          <a class="btn ghost"
+             href="https://wa.me/5549998110445?text=Ol%C3%A1!%20J%C3%A1%20fiz%20o%20PIX%20do%20Workshop%20Relacionamentos%20Conscientes%20e%20vou%20enviar%20o%20comprovante.%20Pode%20confirmar%20minha%20vaga%3F"
+             target="_blank" rel="noopener">
+            Enviar comprovante no WhatsApp
+          </a>
         </aside>
 
       </div>
@@ -766,7 +811,7 @@
             </div>
           </div>
 
-          <div class="stats" aria-label="Resultados esperados (placeholders)">
+          <div class="stats" aria-label="Resultados esperados">
             <div class="stat">
               <div class="num">+ clareza</div>
               <div class="lbl">entender o padrão sem autoengano</div>
@@ -896,14 +941,11 @@
 
             <div class="block" style="text-align:center;">
               <img
-  src="mentor.jpeg"
-  alt="Foto do mentor Evandro Favoretto"
-  loading="lazy"
-  style="border-radius:18px; border:1px solid rgba(11,16,32,0.10); box-shadow: var(--shadow2); object-fit:cover; width:100%; height:auto;"
-/>
-              <p class="section-sub" style="margin:12px 0 0;">
-                *Troque a imagem acima pela sua foto (recomendado: 1200×900 ou similar).*
-              </p>
+                src="mentor.jpeg"
+                alt="Foto do mentor Evandro Favoretto"
+                loading="lazy"
+                style="border-radius:18px; border:1px solid rgba(11,16,32,0.10); box-shadow: var(--shadow2); object-fit:cover; width:100%; max-height:420px;"
+              />
             </div>
           </div>
 
@@ -911,12 +953,54 @@
       </div>
     </section>
 
-    <!-- DEPOIMENTOS (placeholder) -->
+    <!-- PAGAMENTO PIX -->
+    <section id="pix">
+      <div class="wrap">
+        <div class="card pad">
+          <h2 class="section-title">Pagamento via PIX</h2>
+          <p class="section-sub">
+            Para garantir sua vaga, faça o PIX e depois envie o comprovante no WhatsApp.
+          </p>
+
+          <div class="pix" aria-label="Dados do PIX">
+            <div class="row">
+              <div>
+                <small>Chave PIX (CNPJ)</small><br />
+                <code id="pixKey">48674960000163</code>
+              </div>
+              <button class="copybtn" type="button" id="copyPix">Copiar chave</button>
+            </div>
+
+            <div style="margin-top:10px;">
+              <small>Favorecido</small><br />
+              <b>EA Favoretto LTDA</b>
+            </div>
+
+            <div class="toast" id="toast" role="status" aria-live="polite">Chave PIX copiada ✅</div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+              <a class="btn primary"
+                 href="https://wa.me/5549998110445?text=Ol%C3%A1!%20Fiz%20o%20PIX%20do%20Workshop%20Relacionamentos%20Conscientes%20(CNPJ%2048674960000163%20-%20EA%20Favoretto%20LTDA)%20e%20vou%20enviar%20o%20comprovante.%20Pode%20confirmar%20minha%20vaga%3F"
+                 target="_blank" rel="noopener">
+                Enviar comprovante no WhatsApp
+              </a>
+              <a class="btn ghost" href="#conteudo">Voltar ao conteúdo</a>
+            </div>
+
+            <p style="margin:12px 0 0; color:var(--muted2); font-size:13px; line-height:1.6;">
+              Observação: ao enviar o comprovante, informe seu nome completo para facilitar a confirmação.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
     <section>
       <div class="wrap">
         <div class="card pad">
           <h2 class="section-title">O que as pessoas costumam sentir depois</h2>
-          <p class="section-sub">Se você já tiver depoimentos, coloque aqui. Se não, deixe como “em breve” e remova depois.</p>
+          <p class="section-sub">Se você já tiver depoimentos reais, substitua os textos abaixo.</p>
 
           <div class="testimonials" aria-label="Depoimentos">
             <div class="t">
@@ -930,7 +1014,7 @@
           </div>
 
           <div style="display:flex; justify-content:center; gap:10px; margin-top:14px; flex-wrap:wrap;">
-            <a class="btn primary" href="#inscricao">Quero participar</a>
+            <a class="btn primary" href="#pix">Pagamento via PIX</a>
             <a class="btn ghost" href="https://wa.me/5549998110445" target="_blank" rel="noopener">Tirar dúvida no WhatsApp</a>
           </div>
         </div>
@@ -943,21 +1027,17 @@
         <div class="cta">
           <h2>Pronto(a) para sair da repetição?</h2>
           <p>
-            Esse workshop não promete salvar relacionamentos.<br />
-            Ele convida você a ocupar o seu lugar interno — e, a partir disso, viver um encontro mais real.
+            Faça o pagamento via PIX e envie o comprovante para confirmar sua vaga.<br />
+            Esse workshop te convida a ocupar o seu lugar interno — e viver um encontro mais real.
           </p>
 
           <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:6px;">
-            <a class="btn primary"
-               href="https://wa.me/5549998110445?text=Ol%C3%A1!%20Quero%20participar%20do%20Workshop%20Relacionamentos%20Conscientes%20(19%20e%2020%2F02%2F2026%20%C3%A0s%2020h).%20Pode%20me%20enviar%20os%20detalhes%3F"
-               target="_blank" rel="noopener">
-              Garantir minha participação
-            </a>
-            <a class="btn ghost" href="#inscricao">Ver informações</a>
+            <a class="btn primary" href="#pix">Ir para pagamento (PIX)</a>
+            <a class="btn ghost" href="#conteudo">Ver conteúdo</a>
           </div>
 
           <p style="margin:14px auto 0; max-width:760px; color:var(--muted2); font-size:13px; line-height:1.65;">
-            Datas: <b style="color: rgba(124,58,237,0.95);">19 e 20/02/2026</b> • Horário: <b style="color: rgba(124,58,237,0.95);">20h</b>
+            Datas: <b style="color: rgba(124,58,237,0.95);">19 e 20/02/2026</b> • Horário: <b style="color: rgba(124,58,237,0.95);">20h</b> • Duração: <b style="color: rgba(124,58,237,0.95);">2h por noite</b>
           </p>
         </div>
       </div>
@@ -969,6 +1049,13 @@
         <div class="card pad">
           <h2 class="section-title">Dúvidas comuns</h2>
           <p class="section-sub">Respostas simples para tirar dúvidas sem travar sua decisão.</p>
+
+          <details>
+            <summary>Como confirmo minha vaga?</summary>
+            <p class="ans">
+              Faça o PIX para o CNPJ <b>48674960000163</b> (EA Favoretto LTDA) e envie o comprovante no WhatsApp.
+            </p>
+          </details>
 
           <details>
             <summary>Preciso estar em um relacionamento para participar?</summary>
@@ -1020,12 +1107,10 @@
     <div class="wrap">
       <div class="meta">
         19 e 20/02 • <b>20h</b><br/>
-        2 noites (3–4h)
+        2 noites (2h cada)
       </div>
-      <a class="btn primary" style="flex:1; justify-content:center;"
-         href="https://wa.me/5549998110445?text=Ol%C3%A1!%20Quero%20participar%20do%20Workshop%20Relacionamentos%20Conscientes%20(19%20e%2020%2F02%2F2026%20%C3%A0s%2020h).%20Pode%20me%20enviar%20os%20detalhes%3F"
-         target="_blank" rel="noopener">
-        Quero participar
+      <a class="btn primary" style="flex:1; justify-content:center;" href="#pix">
+        Pagamento PIX
       </a>
     </div>
   </div>
@@ -1037,7 +1122,9 @@
         <div>
           <div style="font-weight:950; color:var(--text);">Relacionamentos Conscientes</div>
           <div style="color:var(--muted2);">Do vínculo inconsciente ao encontro real</div>
-          <div style="margin-top:6px;">Contato: <a href="https://wa.me/5549998110445" target="_blank" rel="noopener">(49) 99811-0445</a></div>
+          <div style="margin-top:6px;">
+            Contato: <a href="https://wa.me/5549998110445" target="_blank" rel="noopener">(49) 99811-0445</a>
+          </div>
         </div>
 
         <div style="text-align:right;">
@@ -1066,6 +1153,33 @@
       if (first && first.tagName === 'H1') first.remove();
       const stray = document.querySelector('body > h1');
       if (stray) stray.remove();
+    })();
+
+    // Copiar PIX
+    (function(){
+      const btn = document.getElementById('copyPix');
+      const key = document.getElementById('pixKey');
+      const toast = document.getElementById('toast');
+
+      if (!btn || !key) return;
+
+      btn.addEventListener('click', async () => {
+        try{
+          await navigator.clipboard.writeText(key.textContent.trim());
+          toast.style.display = 'block';
+          setTimeout(() => toast.style.display = 'none', 2000);
+        }catch(e){
+          // fallback simples
+          const range = document.createRange();
+          range.selectNodeContents(key);
+          const sel = window.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range);
+          toast.textContent = 'Selecionei a chave — copie agora ✅';
+          toast.style.display = 'block';
+          setTimeout(() => toast.style.display = 'none', 2500);
+        }
+      });
     })();
   </script>
 </body>
