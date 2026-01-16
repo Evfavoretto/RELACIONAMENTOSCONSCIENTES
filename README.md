@@ -457,6 +457,48 @@
     .t p{ margin:0; color: var(--muted); line-height:1.65; }
     .t .who{ margin-top:10px; color: var(--muted2); font-size:13px; font-weight:950; }
 
+    /* PIX (AGORA APENAS NO FINAL) */
+    .pix{
+      margin: 14px auto 0;
+      max-width: 920px;
+      text-align:left;
+      border-radius: 18px;
+      border: 1px solid rgba(124,58,237,0.16);
+      background: rgba(255,255,255,0.90);
+      padding: 16px;
+      box-shadow: 0 10px 26px rgba(11,16,32,.06);
+    }
+    .pix .row{
+      display:flex; gap:12px; flex-wrap:wrap;
+      align-items:center; justify-content:space-between;
+    }
+    .pix code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 14px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: rgba(230,221,255,0.55);
+      border: 1px solid rgba(124,58,237,0.16);
+      user-select: all;
+    }
+    .pix small{ color: var(--muted2); font-weight:800; }
+    .copybtn{
+      padding:10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(11,16,32,0.10);
+      background: rgba(255,255,255,0.90);
+      font-weight: 950;
+      cursor: pointer;
+      box-shadow: var(--shadow2);
+    }
+    .copybtn:hover{ transform: translateY(-1px); }
+    .toast{
+      margin-top: 10px;
+      color: rgba(124,58,237,0.95);
+      font-weight: 950;
+      display:none;
+    }
+
     /* FAQ */
     .faq details{
       border-radius:18px;
@@ -528,7 +570,6 @@
     @media (max-width: 430px){
       :root{ --topbar-h: 62px; }
       body{ padding-top: calc(var(--topbar-h) + env(safe-area-inset-top, 0px)); }
-
       .main-hero{ margin-top: calc(-1 * var(--topbar-h) - 44px); }
 
       .hero{ padding:10px 0 8px; }
@@ -552,10 +593,8 @@
 
       .grid{ grid-template-columns: 1fr; }
       .cols, .split{ grid-template-columns: 1fr; }
-
       .stats{ grid-template-columns: 1fr; }
       .testimonials{ grid-template-columns: 1fr; }
-
       .photo-wrap{ max-width: 260px; }
       .photo-wrap img{ height: 210px; }
     }
@@ -567,9 +606,7 @@
       .testimonials{ grid-template-columns: 1fr; }
     }
 
-    /* =========================================================
-       ✅ DIMINUI SOMENTE "RELACIONAMENTOS" (linha 1 do H1)
-       ========================================================= */
+    /* ✅ DIMINUI SOMENTE "RELACIONAMENTOS" (linha 1 do H1) */
     .hero-title .title-line:first-child{
       font-size: 0.88em;
       letter-spacing: -0.2px;
@@ -602,6 +639,7 @@
           <a href="#conteudo">Conteúdo</a>
           <a href="#quem">Quem conduz</a>
           <a href="#faq">Dúvidas</a>
+          <a href="#pix">PIX</a>
         </nav>
       </div>
     </div>
@@ -644,13 +682,8 @@
             Talvez não seja falta de amor. Talvez seja falta de lugar.
           </p>
 
-          <!-- ✅ REMOVIDO PIX: CTA agora vai pro WhatsApp -->
           <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-            <a class="btn primary"
-               href="https://wa.me/5549998110445?text=Ol%C3%A1!%20Quero%20garantir%20minha%20vaga%20no%20Workshop%20Relacionamentos%20Conscientes.%20Como%20fa%C3%A7o%20a%20inscri%C3%A7%C3%A3o%3F"
-               target="_blank" rel="noopener">
-              Quero garantir minha vaga
-            </a>
+            <a class="btn primary" href="#pix">Ver PIX para pagamento</a>
             <a class="btn ghost" href="#paraquem">É pra mim?</a>
           </div>
 
@@ -897,13 +930,8 @@
             </div>
           </div>
 
-          <!-- ✅ CTA final sem PIX -->
           <div style="display:flex; justify-content:center; gap:10px; margin-top:14px; flex-wrap:wrap;">
-            <a class="btn primary"
-               href="https://wa.me/5549998110445?text=Ol%C3%A1!%20Quero%20garantir%20minha%20vaga%20no%20Workshop%20Relacionamentos%20Conscientes.%20Como%20fa%C3%A7o%20a%20inscri%C3%A7%C3%A3o%3F"
-               target="_blank" rel="noopener">
-              Garantir minha vaga
-            </a>
+            <a class="btn primary" href="#pix">Fazer pagamento via PIX</a>
             <a class="btn ghost" href="https://wa.me/5549998110445" target="_blank" rel="noopener">Falar no WhatsApp</a>
           </div>
         </div>
@@ -923,10 +951,6 @@
             <div class="t"><p>“Percebi onde eu estava me anulando e consegui colocar limites sem brigar.”</p><div class="who">Camila R.</div></div>
             <div class="t"><p>“Foi como organizar a mente e o coração. Hoje eu escolho com mais maturidade.”</p><div class="who">Fernando L.</div></div>
           </div>
-
-          <div style="display:flex; justify-content:center; gap:10px; margin-top:14px; flex-wrap:wrap;">
-            <a class="btn ghost" href="https://wa.me/5549998110445" target="_blank" rel="noopener">Falar no WhatsApp</a>
-          </div>
         </div>
       </div>
     </section>
@@ -940,7 +964,7 @@
 
           <details>
             <summary>Como confirmo minha vaga?</summary>
-            <p class="ans">Fale no WhatsApp e você recebe as instruções para inscrição e confirmação da vaga.</p>
+            <p class="ans">Faça o pagamento via PIX logo abaixo e envie o comprovante no WhatsApp. Após a confirmação, você será adicionado(a) no grupo oficial.</p>
           </details>
 
           <details>
@@ -957,6 +981,53 @@
             <summary>Vai ter exercícios?</summary>
             <p class="ans">Sim. Exercícios guiados (simples e profundos) para trazer clareza emocional e próximos passos.</p>
           </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ PIX COMPLETO (DEPOIS DO FAQ) -->
+    <section id="pix">
+      <div class="wrap">
+        <div class="card pad">
+          <h2 class="section-title">Pagamento via PIX</h2>
+          <p class="section-sub">
+            Faça o PIX e envie o comprovante no WhatsApp para confirmar sua vaga.
+            Após a confirmação, <b>eu vou te adicionar no grupo oficial do WhatsApp</b>.
+          </p>
+
+          <div class="pix" aria-label="Dados do PIX">
+            <div class="row">
+              <div>
+                <small>Chave PIX (CNPJ)</small><br />
+                <code id="pixKey">48674960000163</code>
+              </div>
+              <button class="copybtn" type="button" id="copyPix">Copiar chave</button>
+            </div>
+
+            <div style="margin-top:10px;">
+              <small>Favorecido</small><br />
+              <b>EA Favoretto LTDA</b>
+            </div>
+
+            <div class="toast" id="toast" role="status" aria-live="polite">Chave PIX copiada ✅</div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+              <a class="btn primary"
+                 href="https://wa.me/5549998110445?text=Ol%C3%A1!%20Fiz%20o%20PIX%20do%20Workshop%20Relacionamentos%20Conscientes%20(CNPJ%2048674960000163%20-%20EA%20Favoretto%20LTDA)%20e%20vou%20enviar%20o%20comprovante.%20Pode%20confirmar%20minha%20vaga%20e%20me%20adicionar%20no%20grupo%20oficial%3F"
+                 target="_blank" rel="noopener">
+                Enviar comprovante no WhatsApp
+              </a>
+              <a class="btn ghost"
+                 href="https://wa.me/5549998110445?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Workshop%20Relacionamentos%20Conscientes."
+                 target="_blank" rel="noopener">
+                Tirar dúvida no WhatsApp
+              </a>
+            </div>
+
+            <p style="margin:12px 0 0; color:var(--muted2); font-size:13px; line-height:1.6;">
+              Dica: ao enviar o comprovante, informe seu <b>nome completo</b>.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -993,8 +1064,35 @@
   </footer>
 
   <script>
+    // Ano
     const y = document.getElementById("year");
     if (y) y.textContent = new Date().getFullYear();
+
+    // Copiar PIX
+    (function(){
+      const btn = document.getElementById('copyPix');
+      const key = document.getElementById('pixKey');
+      const toast = document.getElementById('toast');
+      if (!btn || !key || !toast) return;
+
+      btn.addEventListener('click', async () => {
+        try{
+          await navigator.clipboard.writeText(key.textContent.trim());
+          toast.textContent = 'Chave PIX copiada ✅';
+          toast.style.display = 'block';
+          setTimeout(() => toast.style.display = 'none', 2000);
+        }catch(e){
+          const range = document.createRange();
+          range.selectNodeContents(key);
+          const sel = window.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range);
+          toast.textContent = 'Selecionei a chave — copie agora ✅';
+          toast.style.display = 'block';
+          setTimeout(() => toast.style.display = 'none', 2500);
+        }
+      });
+    })();
   </script>
 </body>
 </html>
