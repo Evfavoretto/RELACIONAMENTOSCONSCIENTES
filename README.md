@@ -1,4 +1,3 @@
-
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
@@ -457,9 +456,45 @@
     .t p{ margin:0; color: var(--muted); line-height:1.65; }
     .t .who{ margin-top:10px; color: var(--muted2); font-size:13px; font-weight:950; }
 
-    /* PIX (AGORA APENAS NO FINAL) */
+    /* BOX PASSOS */
+    .steps{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+      margin: 12px 0 14px;
+    }
+    .step{
+      border-radius: 18px;
+      border: 1px solid rgba(11,16,32,0.10);
+      background: rgba(255,255,255,0.92);
+      padding: 14px;
+      box-shadow: 0 10px 26px rgba(11,16,32,.06);
+    }
+    .step .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(124,58,237,0.18);
+      background: rgba(230,221,255,0.55);
+      font-weight:950;
+      color: rgba(124,58,237,0.95);
+      font-size:12px;
+      letter-spacing:.2px;
+      margin-bottom:10px;
+    }
+    .step p{
+      margin:0;
+      color: var(--muted);
+      line-height:1.6;
+      font-weight:700;
+      font-size:14px;
+    }
+
+    /* PIX */
     .pix{
-      margin: 14px auto 0;
+      margin: 8px auto 0;
       max-width: 920px;
       text-align:left;
       border-radius: 18px;
@@ -566,7 +601,7 @@
       .brand{ min-width: unset; }
     }
 
-    /* MOBILE / iPHONE (principal) */
+    /* MOBILE / iPHONE */
     @media (max-width: 430px){
       :root{ --topbar-h: 62px; }
       body{ padding-top: calc(var(--topbar-h) + env(safe-area-inset-top, 0px)); }
@@ -595,8 +630,8 @@
       .cols, .split{ grid-template-columns: 1fr; }
       .stats{ grid-template-columns: 1fr; }
       .testimonials{ grid-template-columns: 1fr; }
-      .photo-wrap{ max-width: 260px; }
-      .photo-wrap img{ height: 210px; }
+
+      .steps{ grid-template-columns: 1fr; } /* passos em coluna */
     }
 
     @media (max-width: 920px){
@@ -985,7 +1020,7 @@
       </div>
     </section>
 
-    <!-- ✅ PIX COMPLETO (DEPOIS DO FAQ) -->
+    <!-- ✅ PIX COMPLETO (DEPOIS DO FAQ) + PASSOS -->
     <section id="pix">
       <div class="wrap">
         <div class="card pad">
@@ -994,6 +1029,22 @@
             Faça o PIX e envie o comprovante no WhatsApp para confirmar sua vaga.
             Após a confirmação, <b>eu vou te adicionar no grupo oficial do WhatsApp</b>.
           </p>
+
+          <!-- BOX PASSO 1/2/3 -->
+          <div class="steps" aria-label="Passos para confirmar a vaga">
+            <div class="step">
+              <div class="tag">Passo 1</div>
+              <p>Copie a chave PIX e faça o pagamento.</p>
+            </div>
+            <div class="step">
+              <div class="tag">Passo 2</div>
+              <p>Envie o comprovante no WhatsApp (com seu nome completo).</p>
+            </div>
+            <div class="step">
+              <div class="tag">Passo 3</div>
+              <p>Após confirmar, eu te adiciono no grupo oficial do workshop.</p>
+            </div>
+          </div>
 
           <div class="pix" aria-label="Dados do PIX">
             <div class="row">
@@ -1013,7 +1064,7 @@
 
             <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
               <a class="btn primary"
-                 href="https://wa.me/5549998110445?text=Ol%C3%A1!%20Fiz%20o%20PIX%20do%20Workshop%20Relacionamentos%20Conscientes%20(CNPJ%2048674960000163%20-%20EA%20Favoretto%20LTDA)%20e%20vou%20enviar%20o%20comprovante.%20Pode%20confirmar%20minha%20vaga%20e%20me%20adicionar%20no%20grupo%20oficial%3F"
+                 href="https://wa.me/5549998110445?text=Ol%C3%A1!%20Fiz%20o%20PIX%20do%20Workshop%20Relacionamentos%20Conscientes%20(CNPJ%2048674960000163%20-%20EA%20Favoretto%20LTDA)%20e%20vou%20enviar%20o%20comprovante.%20Pode%20confirmar%20minha%20vaga%20e%20me%20adicionar%20no%20grupo%20oficial%3F%0A%0ANome%20completo%3A%20"
                  target="_blank" rel="noopener">
                 Enviar comprovante no WhatsApp
               </a>
