@@ -28,6 +28,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800;900&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+/* DIMINUI SOMENTE "RELACIONAMENTOS" (linha 1 do H1) */
+.hero-title .title-line:first-child{
+  font-size: 0.88em;  /* diminui RELACIONAMENTOS */
+  letter-spacing: -0.2px;
+}
+
+/* no iPhone, diminui um pouco mais */
+@media (max-width: 430px){
+  .hero-title .title-line:first-child{
+    font-size: 0.84em;
+  }
+}
 
   <style>
     :root{
