@@ -24,7 +24,6 @@
   <meta name="twitter:description" content="Do vínculo inconsciente ao encontro real. 19 e 20/02/2026 às 20h." />
   <meta name="twitter:image" content="https://via.placeholder.com/1200x630.png?text=Relacionamentos+Conscientes" />
 
-  <!-- Favicons (opcional) -->
   <link rel="icon" href="https://via.placeholder.com/64.png" />
 
   <!-- Google Fonts -->
@@ -56,6 +55,9 @@
       --max: 1140px;
 
       --focus: 0 0 0 4px rgba(124,58,237,0.25);
+
+      /* altura da barra fixa (desktop e mobile) */
+      --topbar-h: 70px;
     }
 
     *{ box-sizing:border-box; }
@@ -70,6 +72,9 @@
         radial-gradient(1000px 640px at 50% 0%, rgba(255,227,241,0.86), transparent 66%),
         linear-gradient(180deg, #f7fbff 0%, #faf7ff 60%, #fff7fb 100%);
       overflow-x:hidden;
+
+      /* espaço para a barra fixa */
+      padding-top: var(--topbar-h);
     }
 
     a{ color:inherit; text-decoration:none; }
@@ -116,23 +121,29 @@
       margin-top:0 !important;
     }
 
-    /* TOPBAR + NAV */
+    /* TOPBAR fixa (estilo app/página fixa) */
     .topbar{
-      position:sticky; top:0; z-index:50;
-      background: rgba(255,255,255,.72);
+      position: fixed;
+      left: 0; right: 0; top: 0;
+      height: var(--topbar-h);
+      z-index: 80;
+      background: rgba(255,255,255,.76);
       backdrop-filter: blur(12px);
       border-bottom:1px solid var(--stroke);
+      display:flex;
+      align-items:center;
     }
     .topbar .inner{
       display:flex; align-items:center; justify-content:space-between;
-      gap:12px; padding:12px 0;
+      gap:12px;
+      padding:10px 0;
     }
     .brand{
       display:flex; align-items:center; gap:10px;
       min-width: 220px;
     }
     .mark{
-      width:36px; height:36px; border-radius:14px;
+      width:34px; height:34px; border-radius:14px;
       background: radial-gradient(circle at 30% 30%, #fff, rgba(124,58,237,0.95));
       box-shadow: 0 0 0 6px rgba(124,58,237,0.10);
       flex:0 0 auto;
@@ -151,7 +162,7 @@
     }
     .datepill{
       display:inline-flex; align-items:center; gap:10px;
-      padding:10px 12px;
+      padding:9px 11px;
       border-radius:999px;
       background: rgba(255,255,255,0.85);
       border:1px solid var(--stroke);
@@ -172,7 +183,7 @@
       flex:1;
     }
     nav a{
-      padding:10px 10px;
+      padding:9px 10px;
       border-radius:999px;
       font-weight:800;
       color:var(--muted);
@@ -220,7 +231,7 @@
     }
 
     /* HERO */
-    .hero{ padding:46px 0 18px; }
+    .hero{ padding:28px 0 14px; }
     .grid{
       display:grid;
       grid-template-columns: 1.15fr .85fr;
@@ -235,7 +246,7 @@
       position:relative;
       overflow:hidden;
     }
-    .card.pad{ padding:26px; }
+    .card.pad{ padding:24px; }
 
     .glow{
       position:absolute; inset:-150px -160px auto auto;
@@ -250,7 +261,7 @@
     }
 
     .sub{
-      margin:0 0 14px;
+      margin:0 0 12px;
       color: rgba(11,16,32,0.60);
       font-weight:950;
       text-transform:uppercase;
@@ -259,11 +270,11 @@
     }
 
     h1{
-      margin:0 0 10px;
+      margin:0 0 8px;
       font-family: "Fraunces", ui-serif, Georgia, serif;
-      font-size: clamp(52px, 6.6vw, 92px);
+      font-size: clamp(46px, 6.2vw, 86px);
       line-height: 0.98;
-      letter-spacing: -1.15px;
+      letter-spacing: -1.10px;
       background: linear-gradient(90deg, rgba(11,16,32,0.92), rgba(124,58,237,0.92), rgba(236,72,153,0.80));
       -webkit-background-clip:text;
       background-clip:text;
@@ -271,15 +282,15 @@
     }
 
     .lead{
-      margin:0 0 14px;
+      margin:0 0 12px;
       font-size:16px;
       color: var(--muted);
-      line-height:1.75;
+      line-height:1.72;
     }
 
     .bullets{
       display:grid; gap:10px;
-      margin:14px 0 0;
+      margin:12px 0 0;
       padding:0;
       list-style:none;
       color:var(--muted);
@@ -299,8 +310,8 @@
     }
 
     .quote{
-      margin:16px 0 0;
-      padding:16px 16px;
+      margin:14px 0 0;
+      padding:14px 14px;
       border-radius:18px;
       background: rgba(255,255,255,0.92);
       border:1px solid rgba(124,58,237,0.18);
@@ -309,7 +320,7 @@
 
     .mini{
       display:flex; gap:10px; flex-wrap:wrap;
-      margin-top:14px;
+      margin-top:12px;
       color: var(--muted2);
       font-size:13px;
     }
@@ -323,10 +334,10 @@
 
     /* SIDE CARD */
     .side{
-      padding:26px;
+      padding:24px;
       display:flex;
       flex-direction:column;
-      gap:14px;
+      gap:12px;
       background: var(--card2);
     }
     .kicker{
@@ -338,7 +349,7 @@
     }
     .info{
       display:flex; align-items:flex-start; gap:10px;
-      padding:14px;
+      padding:12px;
       border-radius:18px;
       border:1px solid rgba(11,16,32,0.10);
       background: rgba(255,255,255,0.92);
@@ -358,17 +369,17 @@
     .badge s{ color: rgba(11,16,32,0.45); }
 
     /* SECTIONS */
-    main{ padding-bottom: 110px; } /* espaço pro CTA mobile */
-    section{ padding:18px 0; }
+    main{ padding-bottom: 96px; }
+    section{ padding:16px 0; }
     .section-title{
       margin:0 0 10px;
       font-size:22px;
       letter-spacing:-0.2px;
     }
     .section-sub{
-      margin:0 0 18px;
+      margin:0 0 16px;
       color: var(--muted);
-      line-height:1.75;
+      line-height:1.72;
     }
 
     .cols{
@@ -438,6 +449,7 @@
       line-height:1.35;
     }
 
+    /* Depoimentos sem foto */
     .testimonials{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -454,20 +466,14 @@
     .t p{ margin:0; color: var(--muted); line-height:1.65; }
     .t .who{
       margin-top:10px;
-      display:flex; align-items:center; gap:10px;
       color: var(--muted2);
       font-size:13px;
-      font-weight:900;
-    }
-    .avatar{
-      width:34px; height:34px; border-radius: 12px;
-      background: linear-gradient(180deg, rgba(230,221,255,0.95), rgba(255,255,255,0.92));
-      border:1px solid rgba(124,58,237,0.18);
+      font-weight:950;
     }
 
     /* CTA */
     .cta{
-      padding:28px;
+      padding:24px;
       text-align:center;
       border-radius: calc(var(--radius) + 6px);
       background:
@@ -480,14 +486,14 @@
     }
     .cta h2{
       margin:0 0 10px;
-      font-size:28px;
+      font-size:26px;
       letter-spacing:-0.25px;
     }
     .cta p{
       margin:0 auto 14px;
       max-width: 760px;
       color: var(--muted);
-      line-height:1.75;
+      line-height:1.72;
     }
 
     /* PIX */
@@ -532,6 +538,22 @@
       display:none;
     }
 
+    /* Foto do mentor (menor e ajustada) */
+    .photo-wrap{
+      max-width: 360px;
+      margin: 0 auto;
+      padding: 16px;
+      text-align:center;
+    }
+    .photo-wrap img{
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius:18px;
+      border:1px solid rgba(11,16,32,0.10);
+      box-shadow: var(--shadow2);
+    }
+
     /* FAQ */
     .faq details{
       border-radius:18px;
@@ -557,7 +579,7 @@
     .faq .ans{
       margin:10px 0 0;
       color: var(--muted);
-      line-height:1.75;
+      line-height:1.72;
     }
 
     /* Footer */
@@ -578,10 +600,10 @@
     /* WhatsApp floating */
     .whats-float{
       position: fixed;
-      right: 18px;
-      bottom: 98px;
-      width: 56px;
-      height: 56px;
+      right: 16px;
+      bottom: 88px; /* acima da barra fixa */
+      width: 54px;
+      height: 54px;
       border-radius: 18px;
       background: #25D366;
       display:flex; align-items:center; justify-content:center;
@@ -593,13 +615,13 @@
     .whats-float svg{ width: 28px; height: 28px; fill: #fff; }
     .whats-float:hover{ filter: brightness(1.03); transform: translateY(-1px); }
 
-    /* CTA mobile fixo */
+    /* CTA mobile fixo (compacto) */
     .sticky-cta{
       position: fixed;
       left: 0; right: 0; bottom: 0;
-      z-index: 70;
-      padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
-      background: rgba(255,255,255,.78);
+      z-index: 90;
+      padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+      background: rgba(255,255,255,.82);
       backdrop-filter: blur(12px);
       border-top: 1px solid var(--stroke);
       display: none;
@@ -608,26 +630,50 @@
       display:flex; gap:10px; align-items:center; justify-content:space-between;
     }
     .sticky-cta .meta{
-      min-width: 140px;
+      min-width: 130px;
       color: var(--muted);
       font-size: 12px;
       font-weight: 900;
       line-height: 1.2;
     }
     .sticky-cta .meta b{ color: rgba(124,58,237,0.95); }
+    .sticky-cta .btn{
+      padding: 12px 14px;
+    }
 
+    /* Responsive */
     @media (max-width: 980px){
       nav{ display:none; }
       .brand{ min-width: unset; }
     }
+
+    /* Mobile: tudo menor/compacto */
     @media (max-width: 920px){
+      :root{ --topbar-h: 62px; }
+      body{ padding-top: var(--topbar-h); }
+
       .grid{ grid-template-columns: 1fr; }
       .cols, .split{ grid-template-columns: 1fr; }
       .actions{ display:none; }
-      h1{ font-size: clamp(42px, 10vw, 64px); }
+      .card.pad{ padding:18px; }
+
+      .hero{ padding:18px 0 10px; }
+      h1{ font-size: clamp(36px, 9.5vw, 52px); }
+      .sub{ font-size:12px; margin-bottom:10px; }
+      .lead{ font-size:15px; }
+
+      .datepill{ display:none; } /* reduz poluição visual no topo */
+
       .stats{ grid-template-columns: 1fr; }
       .testimonials{ grid-template-columns: 1fr; }
+
+      .photo-wrap{ max-width: 280px; padding:14px; }
+      .photo-wrap img{ height: 220px; }
+
+      .whats-float{ bottom: 78px; right: 14px; width: 52px; height: 52px; }
+
       .sticky-cta{ display:block; }
+      main{ padding-bottom: 96px; }
     }
   </style>
 </head>
@@ -661,7 +707,7 @@
 
         <div class="actions">
           <a class="btn ghost" href="#conteudo">Ver conteúdo</a>
-          <a class="btn primary" href="#pagamento">Pagamento (PIX)</a>
+          <a class="btn primary" href="#pix">Pagamento (PIX)</a>
         </div>
       </div>
     </div>
@@ -684,7 +730,7 @@
           </p>
 
           <div class="quote">
-            <div style="color:var(--muted); line-height:1.75;">
+            <div style="color:var(--muted); line-height:1.72;">
               Relacionamento não é sobre encontrar alguém.<br />
               É sobre o <b>lugar interno</b> a partir do qual eu me relaciono.
             </div>
@@ -696,15 +742,13 @@
             <li><b>Próximos passos</b> simples e práticos para aplicar no dia a dia.</li>
           </ul>
 
-          <p class="lead" style="margin-top:14px;">
+          <p class="lead" style="margin-top:12px;">
             Você muda a pessoa, mas a história se repete?<br />
             Talvez não seja falta de amor. Talvez seja falta de lugar.
           </p>
 
-          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;" id="pagamento">
-            <a class="btn primary" href="#pix">
-              Ver pagamento via PIX
-            </a>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <a class="btn primary" href="#pix">Ver pagamento via PIX</a>
             <a class="btn ghost" href="#paraquem">É pra mim?</a>
           </div>
 
@@ -748,16 +792,13 @@
             <span>⭐</span>
           </div>
 
-          <p style="margin:6px 0 0; color:var(--muted); line-height:1.75;">
+          <p style="margin:6px 0 0; color:var(--muted); line-height:1.72;">
             Um workshop de duas noites para quem cansou de repetir padrões,
             se perder de si e deseja se relacionar a partir de um lugar mais
             consciente, adulto e verdadeiro.
           </p>
 
-          <a class="btn primary" href="#pix">
-            Fazer pagamento via PIX
-          </a>
-
+          <a class="btn primary" href="#pix">Fazer pagamento via PIX</a>
           <a class="btn ghost" href="#conteudo">Ver o que será trabalhado</a>
 
           <p style="margin:0; color:var(--muted2); font-size:13px; line-height:1.6;">
@@ -857,7 +898,7 @@
               carência, medo de abandono, necessidade de aprovação ou tentativa de preencher vazios emocionais.
             </p>
             <div class="quote" style="margin:0;">
-              <div style="color:var(--muted); line-height:1.75;">
+              <div style="color:var(--muted); line-height:1.72;">
                 <b>Adulto não ama implorando.</b><br />
                 Adulto ama escolhendo.
               </div>
@@ -914,7 +955,7 @@
       </div>
     </section>
 
-    <!-- QUEM CONDUZ -->
+    <!-- QUEM CONDUZ (corrigido) -->
     <section id="quem">
       <div class="wrap">
         <div class="card pad">
@@ -932,22 +973,19 @@
               </p>
 
               <div class="quote">
-                <div style="color:var(--muted); line-height:1.75;">
+                <div style="color:var(--muted); line-height:1.72;">
                   <b>Não é falta de amor.</b><br />
                   Muitas vezes, é falta de lugar.
                 </div>
               </div>
             </div>
 
-            <div class="block photo-wrap" style="text-align:center;">
-  <img
-    src="mentor.jpeg"
-    alt="Foto do mentor Evandro Favoretto"
-    loading="lazy"
-    style="border-radius:18px; border:1px solid rgba(11,16,32,0.10); box-shadow: var(--shadow2);"
-  />
-</div>
-
+            <div class="block photo-wrap">
+              <img
+                src="mentor.jpeg"
+                alt="Foto do mentor Evandro Favoretto"
+                loading="lazy"
+              />
             </div>
           </div>
 
@@ -997,21 +1035,29 @@
       </div>
     </section>
 
-    <!-- DEPOIMENTOS -->
+    <!-- DEPOIMENTOS (sem foto) -->
     <section>
       <div class="wrap">
         <div class="card pad">
           <h2 class="section-title">O que as pessoas costumam sentir depois</h2>
-          <p class="section-sub">Se você já tiver depoimentos reais, substitua os textos abaixo.</p>
+          <p class="section-sub">Depoimentos ilustrativos (você pode substituir pelos reais depois).</p>
 
           <div class="testimonials" aria-label="Depoimentos">
             <div class="t">
               <p>“Eu parei de tentar convencer e comecei a me posicionar. Foi leve e direto.”</p>
-              <div class="who"><span class="avatar" aria-hidden="true"></span> Participante (nome)</div>
+              <div class="who">Mariana S.</div>
             </div>
             <div class="t">
               <p>“Saí com clareza do que é meu e do que é do outro. Isso muda tudo.”</p>
-              <div class="who"><span class="avatar" aria-hidden="true"></span> Participante (nome)</div>
+              <div class="who">Rafael A.</div>
+            </div>
+            <div class="t">
+              <p>“Entendi meu padrão e parei de entrar no automático. Foi um divisor de águas.”</p>
+              <div class="who">Camila R.</div>
+            </div>
+            <div class="t">
+              <p>“Me trouxe um senso de direção: ajustar, sustentar ou encerrar com respeito.”</p>
+              <div class="who">Bruno M.</div>
             </div>
           </div>
 
@@ -1163,7 +1209,7 @@
       const key = document.getElementById('pixKey');
       const toast = document.getElementById('toast');
 
-      if (!btn || !key) return;
+      if (!btn || !key || !toast) return;
 
       btn.addEventListener('click', async () => {
         try{
@@ -1171,7 +1217,6 @@
           toast.style.display = 'block';
           setTimeout(() => toast.style.display = 'none', 2000);
         }catch(e){
-          // fallback simples
           const range = document.createRange();
           range.selectNodeContents(key);
           const sel = window.getSelection();
