@@ -33,31 +33,29 @@
 
   <style>
     :root{
-      --blue:   #cfeeff;
-      --lilac:  #e6ddff;
-      --pink:   #ffe3f1;
+      --blue:#cfeeff;
+      --lilac:#e6ddff;
+      --pink:#ffe3f1;
 
-      --ink:    #0b1020;
-      --text:   rgba(11,16,32,0.92);
-      --muted:  rgba(11,16,32,0.70);
-      --muted2: rgba(11,16,32,0.56);
+      --ink:#0b1020;
+      --text:rgba(11,16,32,0.92);
+      --muted:rgba(11,16,32,0.70);
+      --muted2:rgba(11,16,32,0.56);
 
-      --accent: #7c3aed;
+      --accent:#7c3aed;
       --accent2:#ec4899;
-      --stroke: rgba(11,16,32,0.12);
+      --stroke:rgba(11,16,32,0.12);
 
-      --card:   rgba(255,255,255,0.78);
-      --card2:  rgba(255,255,255,0.90);
+      --card:rgba(255,255,255,0.78);
+      --card2:rgba(255,255,255,0.90);
 
-      --shadow: 0 20px 55px rgba(11,16,32,.14);
-      --shadow2: 0 12px 30px rgba(11,16,32,.10);
-      --radius: 22px;
-      --max: 1140px;
+      --shadow:0 20px 55px rgba(11,16,32,.14);
+      --shadow2:0 12px 30px rgba(11,16,32,.10);
+      --radius:22px;
+      --max:1140px;
 
-      --focus: 0 0 0 4px rgba(124,58,237,0.25);
-
-      /* altura da barra fixa (desktop e mobile) */
-      --topbar-h: 70px;
+      --focus:0 0 0 4px rgba(124,58,237,0.25);
+      --topbar-h:70px;
     }
 
     *{ box-sizing:border-box; }
@@ -65,15 +63,13 @@
     body{
       margin:0;
       color:var(--text);
-      font-family: "Manrope", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-family:"Manrope", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       background:
         radial-gradient(1200px 760px at 14% 22%, rgba(207,238,255,0.95), transparent 60%),
         radial-gradient(1200px 760px at 86% 30%, rgba(230,221,255,0.92), transparent 62%),
         radial-gradient(1000px 640px at 50% 0%, rgba(255,227,241,0.86), transparent 66%),
         linear-gradient(180deg, #f7fbff 0%, #faf7ff 60%, #fff7fb 100%);
       overflow-x:hidden;
-
-      /* espaço para a barra fixa */
       padding-top: var(--topbar-h);
     }
 
@@ -82,10 +78,7 @@
     .wrap{ max-width:var(--max); margin:0 auto; padding:0 18px; }
 
     /* Acessibilidade */
-    .skip-link{
-      position:absolute; left:-999px; top:auto;
-      width:1px; height:1px; overflow:hidden;
-    }
+    .skip-link{ position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden; }
     .skip-link:focus{
       left:18px; top:14px; width:auto; height:auto;
       padding:10px 12px; border-radius:12px;
@@ -116,59 +109,38 @@
       padding:0 !important;
       border:0 !important;
     }
-    main, .main-content, .container, .wrapper{
-      padding-top:0 !important;
-      margin-top:0 !important;
-    }
 
-    /* TOPBAR fixa (estilo app/página fixa) */
+    /* TOPBAR fixa */
     .topbar{
-      position: fixed;
-      left: 0; right: 0; top: 0;
-      height: var(--topbar-h);
-      z-index: 80;
+      position:fixed; left:0; right:0; top:0;
+      height:var(--topbar-h);
+      z-index:80;
       background: rgba(255,255,255,.76);
       backdrop-filter: blur(12px);
       border-bottom:1px solid var(--stroke);
-      display:flex;
-      align-items:center;
+      display:flex; align-items:center;
     }
     .topbar .inner{
       display:flex; align-items:center; justify-content:space-between;
-      gap:12px;
-      padding:10px 0;
+      gap:12px; padding:10px 0;
     }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      min-width: 220px;
-    }
+    .brand{ display:flex; align-items:center; gap:10px; min-width:220px; }
     .mark{
       width:34px; height:34px; border-radius:14px;
       background: radial-gradient(circle at 30% 30%, #fff, rgba(124,58,237,0.95));
       box-shadow: 0 0 0 6px rgba(124,58,237,0.10);
       flex:0 0 auto;
     }
-    .brand strong{
-      font-weight:900;
-      letter-spacing:-0.3px;
-      line-height:1.05;
-    }
-    .brand span{
-      display:block;
-      font-size:12px;
-      color:var(--muted2);
-      margin-top:2px;
-      font-weight:700;
-    }
+    .brand strong{ font-weight:900; letter-spacing:-0.3px; line-height:1.05; }
+    .brand span{ display:block; font-size:12px; color:var(--muted2); margin-top:2px; font-weight:700; }
+
     .datepill{
       display:inline-flex; align-items:center; gap:10px;
-      padding:9px 11px;
-      border-radius:999px;
+      padding:9px 11px; border-radius:999px;
       background: rgba(255,255,255,0.85);
       border:1px solid var(--stroke);
       color: var(--muted);
       font-weight:800;
-      letter-spacing:.2px;
       white-space:nowrap;
     }
     .dot{
@@ -177,16 +149,11 @@
       box-shadow: 0 0 0 6px rgba(236,72,153,0.12);
       flex:0 0 auto;
     }
-    nav{
-      display:flex; gap:14px; align-items:center;
-      justify-content:center;
-      flex:1;
-    }
+
+    nav{ display:flex; gap:14px; align-items:center; justify-content:center; flex:1; }
     nav a{
-      padding:9px 10px;
-      border-radius:999px;
-      font-weight:800;
-      color:var(--muted);
+      padding:9px 10px; border-radius:999px;
+      font-weight:800; color:var(--muted);
       border:1px solid transparent;
       transition: background .15s ease, border-color .15s ease, transform .15s ease;
       white-space:nowrap;
@@ -197,21 +164,16 @@
       transform: translateY(-1px);
       color: var(--text);
     }
-    .actions{
-      display:flex; gap:10px; flex-wrap:wrap;
-      justify-content:flex-end;
-      min-width: 240px;
-    }
+
+    .actions{ display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; min-width:240px; }
 
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
-      padding:12px 16px;
-      border-radius:999px;
+      padding:12px 16px; border-radius:999px;
       border:1px solid var(--stroke);
       background: rgba(255,255,255,0.88);
       color: var(--text);
       font-weight:900;
-      letter-spacing:.2px;
       box-shadow: var(--shadow2);
       transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease, filter .15s ease;
     }
@@ -225,13 +187,10 @@
       border-color: rgba(124,58,237,0.25);
       background: linear-gradient(180deg, rgba(230,221,255,0.95), rgba(255,255,255,0.92));
     }
-    .btn.ghost{
-      background: rgba(255,255,255,0.78);
-      box-shadow:none;
-    }
+    .btn.ghost{ background: rgba(255,255,255,0.78); box-shadow:none; }
 
     /* HERO */
-    .hero{ padding:28px 0 14px; }
+    .hero{ padding:22px 0 14px; }
     .grid{
       display:grid;
       grid-template-columns: 1.15fr .85fr;
@@ -246,7 +205,7 @@
       position:relative;
       overflow:hidden;
     }
-    .card.pad{ padding:24px; }
+    .card.pad{ padding:20px; }
 
     .glow{
       position:absolute; inset:-150px -160px auto auto;
@@ -257,35 +216,38 @@
         rgba(230,221,255,0.48),
         transparent 64%);
       pointer-events:none;
-      filter: blur(0.6px);
     }
 
     .sub{
-      margin:0 0 12px;
+      margin:0 0 10px;
       color: rgba(11,16,32,0.60);
       font-weight:950;
       text-transform:uppercase;
       letter-spacing:.35px;
-      font-size:13px;
+      font-size:12px;
     }
 
+    /* Título sem quebra estranha no mobile */
     h1{
       margin:0 0 8px;
-      font-family: "Fraunces", ui-serif, Georgia, serif;
-      font-size: clamp(46px, 6.2vw, 86px);
+      font-family:"Fraunces", ui-serif, Georgia, serif;
+      font-size: clamp(42px, 6.2vw, 86px);
       line-height: 0.98;
       letter-spacing: -1.10px;
       background: linear-gradient(90deg, rgba(11,16,32,0.92), rgba(124,58,237,0.92), rgba(236,72,153,0.80));
       -webkit-background-clip:text;
       background-clip:text;
       color: transparent;
+      word-break: keep-all;
+      overflow-wrap: normal;
+      hyphens: none;
     }
 
     .lead{
       margin:0 0 12px;
-      font-size:16px;
+      font-size:15.5px;
       color: var(--muted);
-      line-height:1.72;
+      line-height:1.7;
     }
 
     .bullets{
@@ -310,7 +272,7 @@
     }
 
     .quote{
-      margin:14px 0 0;
+      margin:12px 0 0;
       padding:14px 14px;
       border-radius:18px;
       background: rgba(255,255,255,0.92);
@@ -334,7 +296,7 @@
 
     /* SIDE CARD */
     .side{
-      padding:24px;
+      padding:20px;
       display:flex;
       flex-direction:column;
       gap:12px;
@@ -369,24 +331,11 @@
     .badge s{ color: rgba(11,16,32,0.45); }
 
     /* SECTIONS */
-    main{ padding-bottom: 96px; }
     section{ padding:16px 0; }
-    .section-title{
-      margin:0 0 10px;
-      font-size:22px;
-      letter-spacing:-0.2px;
-    }
-    .section-sub{
-      margin:0 0 16px;
-      color: var(--muted);
-      line-height:1.72;
-    }
+    .section-title{ margin:0 0 10px; font-size:22px; letter-spacing:-0.2px; }
+    .section-sub{ margin:0 0 16px; color: var(--muted); line-height:1.72; }
 
-    .cols{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-    }
+    .cols{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
     .block{
       border-radius: var(--radius);
       border:1px solid rgba(11,16,32,0.10);
@@ -394,34 +343,18 @@
       padding:18px;
       box-shadow: 0 10px 26px rgba(11,16,32,.06);
     }
-    .block h3{
-      margin:0 0 10px;
-      color: rgba(124,58,237,0.95);
-      font-size:17px;
-      letter-spacing:-0.1px;
-    }
+    .block h3{ margin:0 0 10px; color: rgba(124,58,237,0.95); font-size:17px; }
+
     .check{
       margin:0; padding:0; list-style:none;
       display:grid; gap:8px;
       color: var(--muted);
       line-height:1.6;
     }
-    .check li{
-      display:flex; gap:10px; align-items:flex-start;
-    }
-    .check li::before{
-      content:"✓";
-      color: rgba(124,58,237,0.95);
-      font-weight:900;
-      margin-top:1px;
-    }
+    .check li{ display:flex; gap:10px; align-items:flex-start; }
+    .check li::before{ content:"✓"; color: rgba(124,58,237,0.95); font-weight:900; margin-top:1px; }
 
-    .split{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-      align-items:stretch;
-    }
+    .split{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; align-items:stretch; }
 
     .stats{
       display:grid; gap:12px;
@@ -435,19 +368,8 @@
       padding:14px;
       text-align:left;
     }
-    .stat .num{
-      font-size:20px;
-      font-weight:950;
-      color: rgba(124,58,237,0.95);
-      letter-spacing:-0.2px;
-    }
-    .stat .lbl{
-      margin-top:4px;
-      color: var(--muted2);
-      font-size:13px;
-      font-weight:800;
-      line-height:1.35;
-    }
+    .stat .num{ font-size:20px; font-weight:950; color: rgba(124,58,237,0.95); }
+    .stat .lbl{ margin-top:4px; color: var(--muted2); font-size:13px; font-weight:800; line-height:1.35; }
 
     /* Depoimentos sem foto */
     .testimonials{
@@ -464,39 +386,9 @@
       box-shadow: 0 10px 26px rgba(11,16,32,.06);
     }
     .t p{ margin:0; color: var(--muted); line-height:1.65; }
-    .t .who{
-      margin-top:10px;
-      color: var(--muted2);
-      font-size:13px;
-      font-weight:950;
-    }
+    .t .who{ margin-top:10px; color: var(--muted2); font-size:13px; font-weight:950; }
 
-    /* CTA */
-    .cta{
-      padding:24px;
-      text-align:center;
-      border-radius: calc(var(--radius) + 6px);
-      background:
-        radial-gradient(900px 520px at 18% 85%, rgba(207,238,255,0.80), transparent 60%),
-        radial-gradient(900px 520px at 82% 85%, rgba(230,221,255,0.82), transparent 60%),
-        radial-gradient(760px 360px at 50% 0%, rgba(255,227,241,0.82), transparent 65%),
-        rgba(255,255,255,0.88);
-      border:1px solid rgba(124,58,237,0.16);
-      box-shadow: var(--shadow);
-    }
-    .cta h2{
-      margin:0 0 10px;
-      font-size:26px;
-      letter-spacing:-0.25px;
-    }
-    .cta p{
-      margin:0 auto 14px;
-      max-width: 760px;
-      color: var(--muted);
-      line-height:1.72;
-    }
-
-    /* PIX */
+    /* PIX (seção única) */
     .pix{
       margin: 14px auto 0;
       max-width: 920px;
@@ -538,11 +430,11 @@
       display:none;
     }
 
-    /* Foto do mentor (menor e ajustada) */
+    /* Foto (menor no mobile) */
     .photo-wrap{
       max-width: 360px;
       margin: 0 auto;
-      padding: 16px;
+      padding: 14px;
       text-align:center;
     }
     .photo-wrap img{
@@ -576,11 +468,7 @@
       color: rgba(124,58,237,0.95);
     }
     .faq details[open] summary::after{ content:"–"; }
-    .faq .ans{
-      margin:10px 0 0;
-      color: var(--muted);
-      line-height:1.72;
-    }
+    .faq .ans{ margin:10px 0 0; color: var(--muted); line-height:1.72; }
 
     /* Footer */
     footer{
@@ -601,7 +489,7 @@
     .whats-float{
       position: fixed;
       right: 16px;
-      bottom: 88px; /* acima da barra fixa */
+      bottom: 18px;
       width: 54px;
       height: 54px;
       border-radius: 18px;
@@ -615,39 +503,11 @@
     .whats-float svg{ width: 28px; height: 28px; fill: #fff; }
     .whats-float:hover{ filter: brightness(1.03); transform: translateY(-1px); }
 
-    /* CTA mobile fixo (compacto) */
-    .sticky-cta{
-      position: fixed;
-      left: 0; right: 0; bottom: 0;
-      z-index: 90;
-      padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
-      background: rgba(255,255,255,.82);
-      backdrop-filter: blur(12px);
-      border-top: 1px solid var(--stroke);
-      display: none;
-    }
-    .sticky-cta .wrap{
-      display:flex; gap:10px; align-items:center; justify-content:space-between;
-    }
-    .sticky-cta .meta{
-      min-width: 130px;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 900;
-      line-height: 1.2;
-    }
-    .sticky-cta .meta b{ color: rgba(124,58,237,0.95); }
-    .sticky-cta .btn{
-      padding: 12px 14px;
-    }
-
     /* Responsive */
     @media (max-width: 980px){
       nav{ display:none; }
       .brand{ min-width: unset; }
     }
-
-    /* Mobile: tudo menor/compacto */
     @media (max-width: 920px){
       :root{ --topbar-h: 62px; }
       body{ padding-top: var(--topbar-h); }
@@ -655,25 +515,18 @@
       .grid{ grid-template-columns: 1fr; }
       .cols, .split{ grid-template-columns: 1fr; }
       .actions{ display:none; }
-      .card.pad{ padding:18px; }
 
-      .hero{ padding:18px 0 10px; }
-      h1{ font-size: clamp(36px, 9.5vw, 52px); }
-      .sub{ font-size:12px; margin-bottom:10px; }
-      .lead{ font-size:15px; }
+      .hero{ padding:16px 0 10px; }
+      .card.pad{ padding:16px; }
 
-      .datepill{ display:none; } /* reduz poluição visual no topo */
+      h1{ font-size: clamp(34px, 9.6vw, 52px); }
+      .datepill{ display:none; }
 
       .stats{ grid-template-columns: 1fr; }
       .testimonials{ grid-template-columns: 1fr; }
 
-      .photo-wrap{ max-width: 280px; padding:14px; }
-      .photo-wrap img{ height: 220px; }
-
-      .whats-float{ bottom: 78px; right: 14px; width: 52px; height: 52px; }
-
-      .sticky-cta{ display:block; }
-      main{ padding-bottom: 96px; }
+      .photo-wrap{ max-width: 260px; padding: 10px; }
+      .photo-wrap img{ height: 210px; }
     }
   </style>
 </head>
@@ -723,7 +576,7 @@
 
           <p class="sub">Workshop — 2 noites • 19 e 20 de fevereiro de 2026 • 20h</p>
 
-          <h1>RELACIONAMENTOS<br/>CONSCIENTES</h1>
+          <h1><span>RELACIONAMENTOS</span><br><span>CONSCIENTES</span></h1>
 
           <p class="lead">
             <b style="color: rgba(124,58,237,0.95);">Do vínculo inconsciente ao encontro real</b>
@@ -747,8 +600,9 @@
             Talvez não seja falta de amor. Talvez seja falta de lugar.
           </p>
 
+          <!-- PIX (1/2) -->
           <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
-            <a class="btn primary" href="#pix">Ver pagamento via PIX</a>
+            <a class="btn primary" href="#pix">Pagamento via PIX</a>
             <a class="btn ghost" href="#paraquem">É pra mim?</a>
           </div>
 
@@ -798,8 +652,8 @@
             consciente, adulto e verdadeiro.
           </p>
 
-          <a class="btn primary" href="#pix">Fazer pagamento via PIX</a>
-          <a class="btn ghost" href="#conteudo">Ver o que será trabalhado</a>
+          <!-- PIX (2/2) -->
+          <a class="btn primary" href="#pix">Pagamento via PIX</a>
 
           <p style="margin:0; color:var(--muted2); font-size:13px; line-height:1.6;">
             Após pagar no PIX, envie o comprovante no WhatsApp para confirmar sua vaga.
@@ -955,7 +809,7 @@
       </div>
     </section>
 
-    <!-- QUEM CONDUZ (corrigido) -->
+    <!-- QUEM CONDUZ -->
     <section id="quem">
       <div class="wrap">
         <div class="card pad">
@@ -981,11 +835,7 @@
             </div>
 
             <div class="block photo-wrap">
-              <img
-                src="mentor.jpeg"
-                alt="Foto do mentor Evandro Favoretto"
-                loading="lazy"
-              />
+              <img src="mentor.jpeg" alt="Foto do mentor Evandro Favoretto" loading="lazy" />
             </div>
           </div>
 
@@ -993,7 +843,7 @@
       </div>
     </section>
 
-    <!-- PAGAMENTO PIX -->
+    <!-- PAGAMENTO PIX (SEÇÃO ÚNICA) -->
     <section id="pix">
       <div class="wrap">
         <div class="card pad">
@@ -1028,7 +878,7 @@
             </div>
 
             <p style="margin:12px 0 0; color:var(--muted2); font-size:13px; line-height:1.6;">
-              Observação: ao enviar o comprovante, informe seu nome completo para facilitar a confirmação.
+              Dica: ao enviar o comprovante, informe seu <b>nome completo</b> para facilitar a confirmação.
             </p>
           </div>
         </div>
@@ -1040,7 +890,7 @@
       <div class="wrap">
         <div class="card pad">
           <h2 class="section-title">O que as pessoas costumam sentir depois</h2>
-          <p class="section-sub">Depoimentos ilustrativos (você pode substituir pelos reais depois).</p>
+          <p class="section-sub">Substitua por depoimentos reais quando quiser.</p>
 
           <div class="testimonials" aria-label="Depoimentos">
             <div class="t">
@@ -1049,44 +899,14 @@
             </div>
             <div class="t">
               <p>“Saí com clareza do que é meu e do que é do outro. Isso muda tudo.”</p>
-              <div class="who">Rafael A.</div>
-            </div>
-            <div class="t">
-              <p>“Entendi meu padrão e parei de entrar no automático. Foi um divisor de águas.”</p>
-              <div class="who">Camila R.</div>
-            </div>
-            <div class="t">
-              <p>“Me trouxe um senso de direção: ajustar, sustentar ou encerrar com respeito.”</p>
-              <div class="who">Bruno M.</div>
+              <div class="who">Carlos R.</div>
             </div>
           </div>
 
           <div style="display:flex; justify-content:center; gap:10px; margin-top:14px; flex-wrap:wrap;">
-            <a class="btn primary" href="#pix">Pagamento via PIX</a>
+            <a class="btn ghost" href="#pix">Ir para a seção PIX</a>
             <a class="btn ghost" href="https://wa.me/5549998110445" target="_blank" rel="noopener">Tirar dúvida no WhatsApp</a>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA FINAL -->
-    <section>
-      <div class="wrap">
-        <div class="cta">
-          <h2>Pronto(a) para sair da repetição?</h2>
-          <p>
-            Faça o pagamento via PIX e envie o comprovante para confirmar sua vaga.<br />
-            Esse workshop te convida a ocupar o seu lugar interno — e viver um encontro mais real.
-          </p>
-
-          <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:6px;">
-            <a class="btn primary" href="#pix">Ir para pagamento (PIX)</a>
-            <a class="btn ghost" href="#conteudo">Ver conteúdo</a>
-          </div>
-
-          <p style="margin:14px auto 0; max-width:760px; color:var(--muted2); font-size:13px; line-height:1.65;">
-            Datas: <b style="color: rgba(124,58,237,0.95);">19 e 20/02/2026</b> • Horário: <b style="color: rgba(124,58,237,0.95);">20h</b> • Duração: <b style="color: rgba(124,58,237,0.95);">2h por noite</b>
-          </p>
         </div>
       </div>
     </section>
@@ -1150,19 +970,6 @@
     </svg>
   </a>
 
-  <!-- CTA MOBILE FIXO -->
-  <div class="sticky-cta" role="region" aria-label="Chamada para ação">
-    <div class="wrap">
-      <div class="meta">
-        19 e 20/02 • <b>20h</b><br/>
-        2 noites (2h cada)
-      </div>
-      <a class="btn primary" style="flex:1; justify-content:center;" href="#pix">
-        Pagamento PIX
-      </a>
-    </div>
-  </div>
-
   <!-- FOOTER -->
   <footer>
     <div class="wrap">
@@ -1214,6 +1021,7 @@
       btn.addEventListener('click', async () => {
         try{
           await navigator.clipboard.writeText(key.textContent.trim());
+          toast.textContent = 'Chave PIX copiada ✅';
           toast.style.display = 'block';
           setTimeout(() => toast.style.display = 'none', 2000);
         }catch(e){
