@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
@@ -72,7 +72,9 @@
         radial-gradient(1000px 640px at 50% 0%, rgba(255,227,241,0.86), transparent 66%),
         linear-gradient(180deg, #f7fbff 0%, #faf7ff 60%, #fff7fb 100%);
       overflow-x:hidden;
-      padding-top: var(--topbar-h);
+
+      /* respeita a safe area do iPhone e evita sobreposição */
+      padding-top: calc(var(--topbar-h) + env(safe-area-inset-top, 0px));
     }
 
     a{ color:inherit; text-decoration:none; }
@@ -94,22 +96,16 @@
     }
     :focus-visible{ outline:none; box-shadow: var(--focus); border-radius:14px; }
 
-    /* GitHub Pages tema */
-    body > h1,
-    body > header:not(.hero),
-    .page-header, .site-header,
-    header.page-header, header.site-header,
-    #header, #header_wrap, #header-wrap,
-    #project_title, #project_tagline,
-    .project-name, .project-tagline,
-    #title, #subtitle,
-    #forkme_banner, .ribbon,
-    .github-corner, .gh-header, .gh-head{
+    /* GitHub Pages tema (força esconder qualquer header/título injetado) */
+    :where(body) > :is(h1, header, .page-header, .site-header, .project-name, .project-tagline,
+    #header, #header_wrap, #header-wrap, #project_title, #project_tagline, #title, #subtitle,
+    #forkme_banner, .ribbon, .github-corner, .gh-header, .gh-head){
       display:none !important;
       height:0 !important;
       margin:0 !important;
       padding:0 !important;
       border:0 !important;
+      overflow:hidden !important;
     }
 
     /* TOPBAR fixa */
@@ -236,20 +232,53 @@
       font-size:12px;
     }
 
-    /* ✅ H1: menor no iPhone e sem cortar */
+    /* ✅ TÍTULO PRINCIPAL (H1) — SEM QUEBRAR ERRADO NO iPHONE */
     .hero-title{
       margin:0 0 8px;
       font-family:"Fraunces", ui-serif, Georgia, serif;
-      font-size: clamp(30px, 4.8vw, 74px);
-      line-height: 1.02;
-      letter-spacing: -0.9px;
+      font-size: clamp(28px, 6.2vw, 58px);
+      line-height: 1.05;
+      letter-spacing: -0.6px;
+
       background: linear-gradient(90deg, rgba(11,16,32,0.92), rgba(124,58,237,0.92), rgba(236,72,153,0.80));
       -webkit-background-clip:text;
       background-clip:text;
       color: transparent;
+
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+
       white-space: normal;
+      word-break: normal;
+      overflow-wrap: normal;
+      hyphens: none;
     }
-    .title-line{ display:block; }
+    .hero-title .title-line{ display:block; }
+
+    /* ✅ TÍTULO DO CARD (mesmo comportamento) */
+    .card-title{
+      margin:0;
+      font-family:"Fraunces", ui-serif, Georgia, serif;
+      font-size: clamp(26px, 5.6vw, 44px);
+      line-height: 1.08;
+      letter-spacing: -0.5px;
+
+      background: linear-gradient(90deg, rgba(11,16,32,0.70), rgba(124,58,237,0.78), rgba(236,72,153,0.70));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color: transparent;
+
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+
+      white-space: normal;
+      word-break: normal;
+      overflow-wrap: normal;
+      hyphens: none;
+    }
+    .card-title .title-line{ display:block; }
 
     .lead{
       margin:0 0 10px;
@@ -565,29 +594,46 @@
       .brand{ min-width: unset; }
     }
 
-    /* ✅ iPhone: ainda menor (títulos e foto) */
-    @media (max-width: 920px){
+    /* ✅ iPhone: fontes menores + títulos mais compactos
+       ✅ “Força a saída” do título do GitHub levantando o card principal */
+    @media (max-width: 430px){
       :root{ --topbar-h: 62px; }
-      body{ padding-top: var(--topbar-h); }
+      body{ padding-top: calc(var(--topbar-h) + env(safe-area-inset-top, 0px)); }
 
-      .grid{ grid-template-columns: 1fr; }
-      .cols, .split{ grid-template-columns: 1fr; }
-      .hero{ padding:14px 0 8px; }
+      .hero{ padding:10px 0 8px; }
       .card.pad{ padding:16px; }
+
+      /* Sobe o card principal para “expulsar” qualquer header injetado */
+      .main-hero{ margin-top: calc(-1 * var(--topbar-h) - 28px); }
 
       .hero-title{
         font-size: clamp(22px, 8.2vw, 34px);
-        letter-spacing: -0.5px;
+        letter-spacing: -0.4px;
+        gap:4px;
+      }
+      .card-title{
+        font-size: clamp(20px, 7.2vw, 30px);
+        gap:4px;
       }
 
       .sub{ font-size:11px; }
       .lead{ font-size:14.5px; }
 
+      .grid{ grid-template-columns: 1fr; }
+      .cols, .split{ grid-template-columns: 1fr; }
+
       .stats{ grid-template-columns: 1fr; }
       .testimonials{ grid-template-columns: 1fr; }
 
-      .photo-wrap{ max-width: 240px; }
-      .photo-wrap img{ height: 200px; }
+      .photo-wrap{ max-width: 260px; }
+      .photo-wrap img{ height: 210px; }
+    }
+
+    @media (max-width: 920px){
+      .grid{ grid-template-columns: 1fr; }
+      .cols, .split{ grid-template-columns: 1fr; }
+      .stats{ grid-template-columns: 1fr; }
+      .testimonials{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -611,6 +657,7 @@
           <a href="#paraquem">É pra mim?</a>
           <a href="#conteudo">Conteúdo</a>
           <a href="#quem">Quem conduz</a>
+          <a href="#pix">PIX</a>
           <a href="#faq">Dúvidas</a>
         </nav>
       </div>
@@ -622,11 +669,13 @@
     <div class="wrap">
       <div class="grid">
 
-        <div class="card pad">
+        <!-- ADICIONADO: main-hero para aplicar o “pull up” no mobile -->
+        <div class="card pad main-hero">
           <div class="glow" aria-hidden="true"></div>
 
           <p class="sub">Workshop — 2 noites • 19 e 20 de fevereiro de 2026 • 20h</p>
 
+          <!-- ✅ H1 corrigido (não quebra errado no iPhone) -->
           <h1 class="hero-title">
             <span class="title-line">RELACIONAMENTOS</span>
             <span class="title-line">CONSCIENTES</span>
@@ -654,7 +703,7 @@
             Talvez não seja falta de amor. Talvez seja falta de lugar.
           </p>
 
-          <!-- ✅ PIX 1/2 -->
+          <!-- ✅ PIX 1/2: botão no Hero -->
           <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
             <a class="btn primary" href="#pix">Pagamento via PIX</a>
             <a class="btn ghost" href="#paraquem">É pra mim?</a>
@@ -718,7 +767,7 @@
   </header>
 
   <main id="conteudo">
-    <!-- IDENTIFICAÇÃO -->
+    <!-- PARA QUEM -->
     <section>
       <div class="wrap">
         <div class="card pad">
@@ -893,7 +942,32 @@
       </div>
     </section>
 
-    <!-- ✅ PIX 2/2: SEÇÃO PIX (único lugar com dados de pagamento) -->
+    <!-- CARD (título roxo ajustado no mesmo padrão) -->
+    <section>
+      <div class="wrap">
+        <div class="card pad">
+          <p class="sub">Workshop — 2 noites • 19 e 20/02/2026 • 20h</p>
+
+          <h2 class="card-title" aria-label="Título do workshop">
+            <span class="title-line">RELACIONAMENTOS</span>
+            <span class="title-line">CONSCIENTES</span>
+          </h2>
+
+          <p class="lead" style="margin-top:10px;">
+            <b style="color: rgba(124,58,237,0.95);">Do vínculo inconsciente ao encontro real</b>
+          </p>
+
+          <div class="quote" style="margin-top:10px;">
+            <div style="color:var(--muted); line-height:1.72;">
+              Relacionamento não é sobre encontrar alguém.<br />
+              É sobre o <b>lugar interno</b> a partir do qual eu me relaciono.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ PIX 2/2: SEÇÃO PIX (único local com dados) -->
     <section id="pix">
       <div class="wrap">
         <div class="card pad">
@@ -939,7 +1013,7 @@
       </div>
     </section>
 
-    <!-- DEPOIMENTOS -->
+    <!-- DEPOIMENTOS (4, sem foto) -->
     <section id="depoimentos">
       <div class="wrap">
         <div class="card pad">
@@ -1047,23 +1121,6 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    (function killGithubTheme(){
-      const selectors = [
-        '.page-header','header.page-header','.site-header','header.site-header',
-        '#header','#header_wrap','#header-wrap',
-        '#project_title','#project_tagline',
-        '.project-name','.project-tagline',
-        '#title','#subtitle',
-        '#forkme_banner','.ribbon',
-        '.github-corner','.gh-header','.gh-head'
-      ];
-      selectors.forEach(sel => document.querySelectorAll(sel).forEach(el => el.remove()));
-      const first = document.body.firstElementChild;
-      if (first && first.tagName === 'H1') first.remove();
-      const stray = document.querySelector('body > h1');
-      if (stray) stray.remove();
-    })();
-
     // Copiar PIX
     (function(){
       const btn = document.getElementById('copyPix');
@@ -1074,6 +1131,7 @@
       btn.addEventListener('click', async () => {
         try{
           await navigator.clipboard.writeText(key.textContent.trim());
+          toast.textContent = 'Chave PIX copiada ✅';
           toast.style.display = 'block';
           setTimeout(() => toast.style.display = 'none', 2000);
         }catch(e){
