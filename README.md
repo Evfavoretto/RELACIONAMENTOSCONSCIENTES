@@ -12,21 +12,24 @@
 
   <style>
     :root{
-      /* Masculino + Feminino (sofisticado) */
-      --masc: #061a3a;      /* azul noite */
-      --fem:  #2b0a22;      /* ameixa escuro */
-      --blend:#0c0f1e;      /* base escura */
-      --gold:#d9b15f;
-      --gold2:#f1d79a;
+      /* Fundo (azul claro + roxo claro/rosa) */
+      --sky1: #bfe7ff;   /* azul claro */
+      --sky2: #d7ccff;   /* roxo claro */
+      --rose: #ffd0ea;   /* rosa claro */
+      --ink:  #0b1020;   /* texto escuro */
 
-      --card: rgba(255,255,255,0.065);
-      --stroke: rgba(255,255,255,0.13);
+      --card: rgba(255,255,255,0.68);
+      --card2: rgba(255,255,255,0.78);
+      --stroke: rgba(11,16,32,0.10);
 
-      --text: rgba(255,255,255,0.94);
-      --muted: rgba(255,255,255,0.76);
-      --muted2: rgba(255,255,255,0.60);
+      --text: rgba(11,16,32,0.92);
+      --muted: rgba(11,16,32,0.72);
+      --muted2: rgba(11,16,32,0.58);
 
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --gold: #c89a2b;     /* dourado suave */
+      --gold2:#8b5cf6;     /* roxo destaque (leve) */
+
+      --shadow: 0 18px 50px rgba(11,16,32,.16);
       --radius: 22px;
       --max: 1140px;
     }
@@ -37,26 +40,30 @@
       margin:0;
       color:var(--text);
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+
+      /* FUNDO CLARO, ATRATIVO E SUAVE */
       background:
-        radial-gradient(1100px 760px at 18% 22%, rgba(6,26,58,0.95), transparent 62%),
-        radial-gradient(1100px 760px at 82% 28%, rgba(43,10,34,0.92), transparent 64%),
-        radial-gradient(900px 520px at 50% 0%, rgba(217,177,95,0.16), transparent 60%),
-        linear-gradient(180deg, #060915 0%, #040613 60%, #03040f 100%);
+        radial-gradient(1100px 760px at 15% 20%, rgba(191,231,255,0.95), transparent 62%),
+        radial-gradient(1100px 760px at 85% 30%, rgba(215,204,255,0.92), transparent 64%),
+        radial-gradient(900px 540px at 50% 0%, rgba(255,208,234,0.80), transparent 62%),
+        linear-gradient(180deg, #f6fbff 0%, #faf7ff 55%, #fff7fb 100%);
       overflow-x:hidden;
     }
+
     a{color:inherit}
     .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
 
-    /* DEFESA: se existir algum h1/header “sobrando” fora do hero, some */
+    /* DEFESA: se existir “título fantasma” acima, some */
     body > h1,
     body > header:not(.hero){
       display:none !important;
     }
 
+    /* Topbar */
     .topbar{
       position:sticky; top:0; z-index:20;
       backdrop-filter: blur(10px);
-      background: rgba(4,6,19,.62);
+      background: rgba(255,255,255,.60);
       border-bottom: 1px solid var(--stroke);
     }
     .topbar .inner{
@@ -68,48 +75,50 @@
       padding:10px 12px;
       border:1px solid var(--stroke);
       border-radius:999px;
-      background: rgba(255,255,255,0.04);
-      color: var(--muted2);
-      font-weight:700;
+      background: rgba(255,255,255,0.68);
+      color: var(--muted);
+      font-weight:800;
       letter-spacing:.2px;
       white-space:nowrap;
     }
     .dot{
       width:10px; height:10px; border-radius:999px;
-      background: radial-gradient(circle at 30% 30%, var(--gold2), var(--gold));
-      box-shadow: 0 0 0 6px rgba(217,177,95,0.11);
+      background: radial-gradient(circle at 30% 30%, #ffffff, rgba(139,92,246,0.9));
+      box-shadow: 0 0 0 6px rgba(139,92,246,0.12);
       flex:0 0 auto;
     }
+
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding:12px 16px;
       border-radius:999px;
-      border:1px solid rgba(217,177,95,0.40);
-      background: linear-gradient(180deg, rgba(217,177,95,0.22), rgba(217,177,95,0.10));
+      border:1px solid rgba(139,92,246,0.28);
+      background: linear-gradient(180deg, rgba(139,92,246,0.18), rgba(255,255,255,0.75));
       color: var(--text);
       text-decoration:none;
-      font-weight:850;
+      font-weight:900;
       letter-spacing:.2px;
-      transition: transform .15s ease, border-color .15s ease, background .15s ease;
-      box-shadow: 0 10px 26px rgba(0,0,0,.30);
+      transition: transform .15s ease, border-color .15s ease, background .15s ease, box-shadow .15s ease;
+      box-shadow: 0 10px 22px rgba(11,16,32,.14);
       cursor:pointer;
     }
-    .btn:hover{ transform: translateY(-1px); border-color: rgba(217,177,95,0.70); }
+    .btn:hover{ transform: translateY(-1px); border-color: rgba(139,92,246,0.48); }
     .btn.secondary{
       border-color: var(--stroke);
-      background: rgba(255,255,255,0.06);
-      font-weight:780;
+      background: rgba(255,255,255,0.66);
+      font-weight:850;
       box-shadow:none;
     }
-    .btn.secondary:hover{ transform: translateY(-1px); background: rgba(255,255,255,0.08); }
+    .btn.secondary:hover{ transform: translateY(-1px); background: rgba(255,255,255,0.80); }
 
-    .hero{ padding:54px 0 18px; }
+    .hero{ padding:56px 0 18px; }
     .grid{
       display:grid;
       grid-template-columns: 1.15fr .85fr;
       gap:18px;
       align-items:stretch;
     }
+
     .card{
       background: var(--card);
       border: 1px solid var(--stroke);
@@ -118,45 +127,56 @@
       overflow:hidden;
       position:relative;
     }
-    .card.pad{ padding:24px; }
+    .card.pad{ padding:26px; }
 
-    /* brilho dourado bem sutil (premium) */
+    /* brilho suave */
     .glow{
-      position:absolute; inset:-90px -110px auto auto;
-      width:380px; height:380px;
-      background: radial-gradient(circle at 30% 30%, rgba(241,215,154,0.22), transparent 62%);
+      position:absolute; inset:-120px -130px auto auto;
+      width:440px; height:440px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.70), rgba(255,208,234,0.45), transparent 62%);
       pointer-events:none;
       filter: blur(0.6px);
     }
 
     .sub{
       margin:0 0 14px;
-      color: var(--gold2);
-      font-weight:900;
+      color: rgba(11,16,32,0.68);
+      font-weight:950;
       letter-spacing:.35px;
       text-transform:uppercase;
       font-size: 13px;
     }
+
+    /* TÍTULO DO WORKSHOP BEM GRANDE */
     h1{
       margin:0 0 12px;
-      font-size: clamp(44px, 5.6vw, 74px);
-      line-height: 1.03;
-      letter-spacing: -1.05px;
+      font-size: clamp(52px, 6.2vw, 90px);
+      line-height: 1.00;
+      letter-spacing: -1.25px;
     }
+    .title-accent{
+      background: linear-gradient(90deg, rgba(11,16,32,0.92), rgba(139,92,246,0.92));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
     .lead{
       margin:0 0 14px;
       font-size: 16px;
       color: var(--muted);
       line-height: 1.75;
     }
+
     .quote{
       margin:18px 0 0;
       padding:16px 16px;
       border-radius: 18px;
-      background: rgba(0,0,0,0.20);
-      border: 1px solid rgba(217,177,95,0.20);
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(139,92,246,0.18);
     }
-    .quote b{ color: var(--gold2); }
+    .quote b{ color: rgba(139,92,246,0.95); }
+
     .hero-actions{
       display:flex; gap:10px; flex-wrap:wrap;
       margin-top:16px;
@@ -169,19 +189,32 @@
     }
     .pill{
       padding:8px 10px;
-      border:1px solid var(--stroke);
+      border:1px solid rgba(11,16,32,0.10);
       border-radius: 999px;
-      background: rgba(255,255,255,0.04);
+      background: rgba(255,255,255,0.72);
     }
 
-    .side{ padding:24px; display:flex; flex-direction:column; gap:14px; }
-    .kicker{ font-weight:950; letter-spacing:.25px; margin:0; color: var(--gold2); font-size:16px; }
+    .side{
+      padding:26px;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      background: rgba(255,255,255,0.74);
+    }
+    .kicker{
+      font-weight:950;
+      letter-spacing:.25px;
+      margin:0;
+      color: rgba(139,92,246,0.95);
+      font-size: 16px;
+    }
+
     .info{
       display:flex; align-items:baseline; gap:10px;
       padding:14px 14px;
       border-radius: 18px;
-      border:1px solid rgba(255,255,255,0.13);
-      background: rgba(255,255,255,0.05);
+      border:1px solid rgba(11,16,32,0.10);
+      background: rgba(255,255,255,0.78);
     }
     .info .big{ font-size: 15px; font-weight:900; color: var(--text); }
     .info .small{ font-size: 13px; color: var(--muted2); }
@@ -193,14 +226,15 @@
     .cols{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
     .block{
       border-radius: var(--radius);
-      border:1px solid var(--stroke);
-      background: rgba(255,255,255,0.05);
+      border:1px solid rgba(11,16,32,0.10);
+      background: rgba(255,255,255,0.72);
       padding:18px;
     }
-    .block h3{ margin:0 0 10px; color: var(--gold2); font-size: 17px; }
+    .block h3{ margin:0 0 10px; color: rgba(139,92,246,0.95); font-size: 17px; }
+
     .check{ margin:0; padding:0; list-style:none; display:grid; gap:8px; color: var(--muted); line-height:1.6; }
     .check li{ display:flex; gap:10px; align-items:flex-start; }
-    .check li::before{ content:"✓"; color: var(--gold2); font-weight:900; margin-top:1px; }
+    .check li::before{ content:"✓"; color: rgba(139,92,246,0.95); font-weight:900; margin-top:1px; }
 
     .split{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; align-items:stretch; }
 
@@ -209,9 +243,11 @@
       text-align:center;
       border-radius: calc(var(--radius) + 6px);
       background:
-        radial-gradient(760px 360px at 50% 0%, rgba(217,177,95,0.22), transparent 65%),
-        linear-gradient(180deg, rgba(255,255,255,0.085), rgba(255,255,255,0.045));
-      border:1px solid rgba(217,177,95,0.22);
+        radial-gradient(760px 360px at 50% 0%, rgba(255,208,234,0.65), transparent 65%),
+        radial-gradient(900px 520px at 25% 90%, rgba(191,231,255,0.70), transparent 60%),
+        radial-gradient(900px 520px at 80% 90%, rgba(215,204,255,0.70), transparent 60%),
+        rgba(255,255,255,0.75);
+      border:1px solid rgba(139,92,246,0.18);
       box-shadow: var(--shadow);
     }
     .cta h2{ margin:0 0 10px; font-size: 28px; letter-spacing:-0.25px; }
@@ -219,8 +255,8 @@
 
     .faq details{
       border-radius: 18px;
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(11,16,32,0.10);
+      background: rgba(255,255,255,0.72);
       padding: 14px 14px;
     }
     .faq details + details{ margin-top:10px; }
@@ -233,7 +269,7 @@
       grid-template-columns: 1fr auto;
       gap:12px;
       align-items:center;
-      border-top: 1px solid var(--stroke);
+      border-top: 1px solid rgba(11,16,32,0.10);
       padding-top: 18px;
     }
 
@@ -241,6 +277,7 @@
       .grid{ grid-template-columns: 1fr; }
       .cols, .split{ grid-template-columns: 1fr; }
       .datepill{ display:none; }
+      h1{ font-size: clamp(44px, 10vw, 64px); }
     }
   </style>
 </head>
@@ -262,7 +299,6 @@
     </div>
   </div>
 
-  <!-- HERO (ÚNICO HEADER DA PÁGINA) -->
   <header class="hero">
     <div class="wrap">
       <div class="grid">
@@ -271,8 +307,10 @@
           <div class="glow" aria-hidden="true"></div>
 
           <p class="sub">Workshop — 2 noites • 19 e 20 de fevereiro de 2026 • 20h</p>
-          <h1>RELACIONAMENTOS<br/>CONSCIENTES</h1>
-          <p class="lead"><b style="color:var(--gold2);">Do vínculo inconsciente ao encontro real</b></p>
+
+          <h1 class="title-accent">RELACIONAMENTOS<br/>CONSCIENTES</h1>
+
+          <p class="lead"><b style="color: rgba(139,92,246,0.95);">Do vínculo inconsciente ao encontro real</b></p>
 
           <div class="quote">
             <div style="color:var(--muted); line-height:1.75;">
@@ -302,22 +340,22 @@
 
           <div class="info">
             <div class="big">📅 Datas:</div>
-            <div class="small"><b style="color:var(--gold2);">19 e 20 de fevereiro de 2026</b></div>
+            <div class="small"><b style="color: rgba(139,92,246,0.95);">19 e 20 de fevereiro de 2026</b></div>
           </div>
 
           <div class="info">
             <div class="big">⏰ Horário:</div>
-            <div class="small"><b style="color:var(--gold2);">20h</b></div>
+            <div class="small"><b style="color: rgba(139,92,246,0.95);">20h</b></div>
           </div>
 
           <div class="info">
             <div class="big">⏳ Duração:</div>
-            <div class="small"><b style="color:var(--gold2);">3 a 4 horas por noite</b></div>
+            <div class="small"><b style="color: rgba(139,92,246,0.95);">3 a 4 horas por noite</b></div>
           </div>
 
           <div class="info">
             <div class="big">📍 Formato:</div>
-            <div class="small"><b style="color:var(--gold2);">[Online / Presencial]</b></div>
+            <div class="small"><b style="color: rgba(139,92,246,0.95);">[Online / Presencial]</b></div>
           </div>
 
           <p style="margin:6px 0 0; color:var(--muted); line-height:1.75;">
@@ -389,13 +427,13 @@
             <li>Não é exposição de histórias.</li>
             <li>Não é um curso “racional” de comunicação.</li>
           </ul>
-          <p class="section-sub" style="margin-top:12px;">
+          <p class="section-sub" style="margin-top:12px;" id="conteudo">
             É um espaço de <b>consciência</b>, <b>acolhimento</b> e <b>reposicionamento interno</b>:
             para sair do vínculo inconsciente (padrão) e caminhar para o encontro real (presença).
           </p>
         </div>
 
-        <div class="card pad" id="conteudo">
+        <div class="card pad">
           <h2 class="section-title">A virada central</h2>
           <p class="section-sub" style="margin-bottom:10px;">
             A maioria das pessoas entra em relacionamentos a partir de lugares inconscientes:
@@ -411,45 +449,6 @@
             Quando o lugar interno muda, a relação responde.
           </p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="card pad">
-        <h2 class="section-title">O que será trabalhado em cada noite</h2>
-        <p class="section-sub">
-          A estrutura foi desenhada para levar você de uma clareza profunda (noite 1)
-          para um reposicionamento prático (noite 2).
-        </p>
-
-        <div class="cols">
-          <div class="block">
-            <h3>🌙 Noite 1 — O vínculo inconsciente</h3>
-            <p class="section-sub" style="margin:0 0 10px;"><b>Objetivo:</b> entender por que dói e por que se repete.</p>
-            <ul class="check">
-              <li>Padrões repetitivos nos relacionamentos</li>
-              <li>De onde vem o seu jeito de amar</li>
-              <li>Carência, expectativa e projeção</li>
-              <li>O outro como espelho emocional</li>
-              <li>Como você se perde de si</li>
-            </ul>
-          </div>
-
-          <div class="block">
-            <h3>🌙 Noite 2 — O encontro real</h3>
-            <p class="section-sub" style="margin:0 0 10px;"><b>Objetivo:</b> saber o que fazer a partir de agora.</p>
-            <ul class="check">
-              <li>O lugar adulto no relacionamento</li>
-              <li>Comunicação consciente (sem ataque e sem defesa)</li>
-              <li>Limites e responsabilidade emocional</li>
-              <li>Clareza: sustentar, ajustar ou encerrar</li>
-              <li>Próximo passo consciente (plano simples)</li>
-            </ul>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
@@ -483,13 +482,6 @@
           </p>
         </details>
 
-        <details>
-          <summary>Esse workshop “salva” relacionamentos?</summary>
-          <p class="ans">
-            Ele não promete isso. Ele te ajuda a organizar o seu lugar interno — e quando isso muda, a relação responde.
-          </p>
-        </details>
-
         <div class="cta" style="margin-top:14px;">
           <h2>Pronto(a) para sair da repetição?</h2>
           <p>
@@ -505,7 +497,7 @@
             <a class="btn secondary" href="#inscricao">Ver informações</a>
           </div>
           <p style="margin:14px auto 0; max-width:760px; color:var(--muted2); font-size:13px; line-height:1.65;">
-            Datas: <b style="color:var(--gold2);">19 e 20 de fevereiro de 2026</b> • Horário: <b style="color:var(--gold2);">20h</b>
+            Datas: <b style="color: rgba(139,92,246,0.95);">19 e 20/02/2026</b> • Horário: <b style="color: rgba(139,92,246,0.95);">20h</b>
           </p>
         </div>
 
@@ -514,12 +506,14 @@
   </section>
 
   <footer>
-    <div class="wrap">
+    <div class="wrap" style="padding-top:18px;">
       <div class="footgrid">
         <div>
           <div style="font-weight:900; color:var(--text);">Relacionamentos Conscientes</div>
-          <div>Do vínculo inconsciente ao encontro real</div>
-          <div style="margin-top:6px;">Contato: <a href="https://wa.me/5549998110445" target="_blank" rel="noopener">(49) 99811-0445</a></div>
+          <div style="color:var(--muted2);">Do vínculo inconsciente ao encontro real</div>
+          <div style="margin-top:6px; color:var(--muted2);">Contato:
+            <a href="https://wa.me/5549998110445" target="_blank" rel="noopener">(49) 99811-0445</a>
+          </div>
         </div>
         <div style="text-align:right;">
           <div>© <span id="year"></span> • Todos os direitos reservados</div>
