@@ -28,18 +28,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800;900&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
-/* DIMINUI SOMENTE "RELACIONAMENTOS" (linha 1 do H1) */
-.hero-title .title-line:first-child{
-  font-size: 0.88em;  /* diminui RELACIONAMENTOS */
-  letter-spacing: -0.2px;
-}
-
-/* no iPhone, diminui um pouco mais */
-@media (max-width: 430px){
-  .hero-title .title-line:first-child{
-    font-size: 0.84em;
-  }
-}
 
   <style>
     :root{
@@ -61,7 +49,6 @@
 
       --shadow:0 20px 55px rgba(11,16,32,.14);
       --shadow2:0 12px 30px rgba(11,16,32,.10);
-
       --radius:22px;
       --max:1140px;
 
@@ -251,18 +238,13 @@
       font-size:12px;
     }
 
-    /* =========================================================
-       TÍTULO PROFISSIONAL (2 linhas fixas, sem quebrar palavra)
-       ========================================================= */
+    /* TÍTULO (2 linhas fixas) */
     .hero-title{
       margin:0 0 12px;
       font-family:"Fraunces", ui-serif, Georgia, serif;
-
-      /* desktop/tablet */
       font-size: clamp(28px, 4.4vw, 46px);
       line-height: 1.06;
       letter-spacing: -0.35px;
-
       background: linear-gradient(90deg,
         rgba(11,16,32,0.76),
         rgba(124,58,237,0.92),
@@ -274,21 +256,20 @@
 
       display:flex;
       flex-direction:column;
-      gap:10px; /* espaço entre RELACIONAMENTOS e CONSCIENTES */
+      gap:10px;
     }
     .hero-title .title-line{
       display:block;
-      white-space: nowrap; /* NÃO deixa quebrar no meio */
+      white-space: nowrap;
     }
 
-    /* TÍTULO DO CARD secundário (mesmo padrão) */
+    /* TÍTULO DO CARD secundário */
     .card-title{
       margin:0;
       font-family:"Fraunces", ui-serif, Georgia, serif;
       font-size: clamp(26px, 4.0vw, 40px);
       line-height: 1.08;
       letter-spacing: -0.32px;
-
       background: linear-gradient(90deg,
         rgba(11,16,32,0.62),
         rgba(124,58,237,0.80),
@@ -606,13 +587,11 @@
       :root{ --topbar-h: 62px; }
       body{ padding-top: calc(var(--topbar-h) + env(safe-area-inset-top, 0px)); }
 
-      /* se algum tema insistir em aparecer, sobe o card para “expulsar” */
       .main-hero{ margin-top: calc(-1 * var(--topbar-h) - 44px); }
 
       .hero{ padding:10px 0 8px; }
       .card.pad{ padding:16px; }
 
-      /* TÍTULO no tamanho do seu exemplo (2 linhas, sem quebrar palavra) */
       .hero-title{
         font-size: clamp(22px, 7.2vw, 32px);
         line-height: 1.08;
@@ -644,6 +623,20 @@
       .cols, .split{ grid-template-columns: 1fr; }
       .stats{ grid-template-columns: 1fr; }
       .testimonials{ grid-template-columns: 1fr; }
+    }
+
+    /* =========================================================
+       ✅ AJUSTE (NO LUGAR CERTO)
+       DIMINUI SOMENTE "RELACIONAMENTOS" (linha 1 do H1)
+       ========================================================= */
+    .hero-title .title-line:first-child{
+      font-size: 0.88em;
+      letter-spacing: -0.2px;
+    }
+    @media (max-width: 430px){
+      .hero-title .title-line:first-child{
+        font-size: 0.84em;
+      }
     }
   </style>
 </head>
