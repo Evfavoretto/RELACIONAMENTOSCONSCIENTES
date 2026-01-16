@@ -236,20 +236,18 @@
       font-size:12px;
     }
 
-    /* ✅ H1 menor + sem quebra estranha no iPhone */
-    h1{
+    /* ✅ H1: menor no iPhone e sem cortar */
+    .hero-title{
       margin:0 0 8px;
       font-family:"Fraunces", ui-serif, Georgia, serif;
-      font-size: clamp(34px, 5.2vw, 74px);
+      font-size: clamp(30px, 4.8vw, 74px);
       line-height: 1.02;
       letter-spacing: -0.9px;
       background: linear-gradient(90deg, rgba(11,16,32,0.92), rgba(124,58,237,0.92), rgba(236,72,153,0.80));
       -webkit-background-clip:text;
       background-clip:text;
       color: transparent;
-      word-break: keep-all;
-      overflow-wrap: normal;
-      hyphens: none;
+      white-space: normal;
     }
     .title-line{ display:block; }
 
@@ -567,7 +565,7 @@
       .brand{ min-width: unset; }
     }
 
-    /* ✅ iPhone: ainda menor */
+    /* ✅ iPhone: ainda menor (títulos e foto) */
     @media (max-width: 920px){
       :root{ --topbar-h: 62px; }
       body{ padding-top: var(--topbar-h); }
@@ -577,9 +575,9 @@
       .hero{ padding:14px 0 8px; }
       .card.pad{ padding:16px; }
 
-      h1{
-        font-size: clamp(26px, 7.6vw, 40px);
-        letter-spacing: -0.6px;
+      .hero-title{
+        font-size: clamp(22px, 8.2vw, 34px);
+        letter-spacing: -0.5px;
       }
 
       .sub{ font-size:11px; }
@@ -588,8 +586,8 @@
       .stats{ grid-template-columns: 1fr; }
       .testimonials{ grid-template-columns: 1fr; }
 
-      .photo-wrap{ max-width: 260px; }
-      .photo-wrap img{ height: 210px; }
+      .photo-wrap{ max-width: 240px; }
+      .photo-wrap img{ height: 200px; }
     }
   </style>
 </head>
@@ -615,8 +613,6 @@
           <a href="#quem">Quem conduz</a>
           <a href="#faq">Dúvidas</a>
         </nav>
-
-        <!-- Removi botão de PIX aqui para não repetir (PIX só 2x no total) -->
       </div>
     </div>
   </div>
@@ -631,7 +627,7 @@
 
           <p class="sub">Workshop — 2 noites • 19 e 20 de fevereiro de 2026 • 20h</p>
 
-          <h1>
+          <h1 class="hero-title">
             <span class="title-line">RELACIONAMENTOS</span>
             <span class="title-line">CONSCIENTES</span>
           </h1>
@@ -658,7 +654,7 @@
             Talvez não seja falta de amor. Talvez seja falta de lugar.
           </p>
 
-          <!-- ✅ PIX 1/2: botão no Hero -->
+          <!-- ✅ PIX 1/2 -->
           <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
             <a class="btn primary" href="#pix">Pagamento via PIX</a>
             <a class="btn ghost" href="#paraquem">É pra mim?</a>
@@ -710,7 +706,6 @@
             consciente, adulto e verdadeiro.
           </p>
 
-          <!-- Removi outro botão de PIX aqui para manter PIX apenas 2x -->
           <a class="btn ghost"
              href="https://wa.me/5549998110445?text=Ol%C3%A1!%20Quero%20tirar%20uma%20d%C3%BAvida%20sobre%20o%20Workshop%20Relacionamentos%20Conscientes."
              target="_blank" rel="noopener">
@@ -898,7 +893,7 @@
       </div>
     </section>
 
-    <!-- ✅ PIX 2/2: SEÇÃO PIX (único lugar de pagamento) -->
+    <!-- ✅ PIX 2/2: SEÇÃO PIX (único lugar com dados de pagamento) -->
     <section id="pix">
       <div class="wrap">
         <div class="card pad">
