@@ -5,21 +5,21 @@
   <meta name="color-scheme" content="light only">
   <meta name="theme-color" content="#ffffff">
 
-  <title>Relacionamentos Conscientes | Workshop (19 e 20/02/2026 às 20h)</title>
-  <meta name="description" content="Workshop de duas noites: Relacionamentos Conscientes — Do vínculo inconsciente ao encontro real. 19 e 20 de fevereiro de 2026 às 20h." />
+  <title>O Ponto de Partida do Relacionamento | Workshop (19 e 20/02/2026 às 20h)</title>
+  <meta name="description" content="Workshop de duas noites: O Ponto de Partida do Relacionamento — Onde o vínculo se organiza ou se perde. 19 e 20 de fevereiro de 2026 às 20h." />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Relacionamentos Conscientes | Workshop" />
+  <meta property="og:title" content="O Ponto de Partida do Relacionamento | Workshop" />
   <meta property="og:description" content="Do vínculo inconsciente ao encontro real." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
-  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Relacionamentos+Conscientes" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=O Ponto de Partida + do Relacionamento" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Relacionamentos Conscientes | Workshop" />
+  <meta name="twitter:title" content="O Ponto de Partida do Relacionamento | Workshop" />
   <meta name="twitter:description" content="19 e 20/02/2026 às 20h." />
-  <meta name="twitter:image" content="https://via.placeholder.com/1200x630.png?text=Relacionamentos+Conscientes" />
+  <meta name="twitter:image" content="https://via.placeholder.com/1200x630.png?text=O Ponto de Partida + do Relacionamento" />
 
   <link rel="icon" href="https://via.placeholder.com/64.png" />
 
@@ -664,8 +664,8 @@
         <a class="brand" href="#topo" aria-label="Ir ao topo">
           <span class="mark" aria-hidden="true"></span>
           <div>
-            <strong>Relacionamentos Conscientes</strong>
-            <span>Do vínculo inconsciente ao encontro real</span>
+            <strong>O Ponto de Partida do Relacionamento</strong>
+            <span>Onde o Vínculo se organiza ou se perde</span>
           </div>
         </a>
 
@@ -691,8 +691,8 @@
           <p class="sub">Workshop — 2 noites • 19 e 20 de fevereiro de 2026 • 20h</p>
 
           <h1 class="hero-title">
-            <span class="title-line">RELACIONAMENTOS</span>
-            <span class="title-line">CONSCIENTES</span>
+            <span class="title-line">O Ponto de Partida </span>
+            <span class="title-line">do Relacionamento</span>
           </h1>
 
           <p class="lead">
@@ -837,7 +837,7 @@
       <div class="wrap">
         <div class="split">
           <div class="card pad">
-            <h2 class="section-title">O que é o Workshop Relacionamentos Conscientes?</h2>
+            <h2 class="section-title">O que é o Workshop O Ponto de Partida do Relacionamento?</h2>
             <p class="section-sub" style="margin-bottom:10px;">
               Um workshop de duas noites para reorganizar o seu lugar interno — e, a partir disso,
               transformar a forma como você se relaciona.
@@ -950,8 +950,8 @@
           <p class="sub">Workshop — 2 noites • 19 e 20/02/2026 • 20h</p>
 
           <h2 class="card-title" aria-label="Título do workshop">
-            <span class="title-line">RELACIONAMENTOS</span>
-            <span class="title-line">CONSCIENTES</span>
+            <span class="title-line">O Ponto de Partida</span>
+            <span class="title-line">do Relacionamento</span>
           </h2>
 
           <p class="lead" style="margin-top:10px;">
@@ -1099,8 +1099,8 @@
     <div class="wrap">
       <div class="footgrid">
         <div>
-          <div style="font-weight:950; color:var(--text);">Relacionamentos Conscientes</div>
-          <div style="color:var(--muted2);">Do vínculo inconsciente ao encontro real</div>
+          <div style="font-weight:950; color:var(--text);">O Ponto de Partida do Relacionamento</div>
+          <div style="color:var(--muted2);">Onde o Vínculo se organiza ou se perde</div>
           <div style="margin-top:6px;">
             Contato: <a href="https://wa.me/5549998110445" target="_blank" rel="noopener">(49) 99811-0445</a>
           </div>
