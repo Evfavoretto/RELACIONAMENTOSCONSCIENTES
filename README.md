@@ -978,8 +978,7 @@
       <div class="wrap">
         <div class="card pad">
           <h2 class="section-title">O que as pessoas costumam sentir depois</h2>
-          <p class="section-sub">Substitua por depoimentos reais quando quiser.</p>
-
+         
           <div class="testimonials" aria-label="Depoimentos">
             <div class="t"><p>“Eu parei de tentar convencer e comecei a me posicionar. Foi leve e direto.”</p><div class="who">Mariana S.</div></div>
             <div class="t"><p>“Saí com clareza do que é meu e do que é do outro. Isso muda tudo.”</p><div class="who">Ricardo P.</div></div>
