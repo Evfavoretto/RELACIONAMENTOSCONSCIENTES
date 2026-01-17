@@ -784,10 +784,10 @@
     <section>
       <div class="wrap">
         <div class="card pad">
-          <h2 class="section-title">Se você se reconhece aqui, é para você</h2>
+          <h2 class="section-title">Talvez você esteja fazendo tudo certo, do lugar errado.</h2>
           <p class="section-sub">
             Você ama, tenta, conversa, se adapta… e mesmo assim algo sempre dói?<br />
-            Talvez não seja falta de amor. Talvez seja <b>o lugar emocional</b> de onde você se relaciona.
+            Não é falta de amor. É <b>o lugar emocional</b> de onde você se relaciona.
           </p>
 
           <div class="cols" id="paraquem">
